@@ -122,7 +122,7 @@ module system_top  #(
 );
 
   // internal signals
-  reg [26:0] pwr_up_cnt = {1'b1,26'b0};
+  reg [20:0] pwr_up_cnt = {21'b0};
 
   wire    [94:0]  gpio_i;
   wire    [94:0]  gpio_o;
@@ -151,6 +151,7 @@ module system_top  #(
   wire [7:0] spi_pmod_csn;
   wire       spi_pmod_clk;
   wire       spi_pmod_mosi;
+  wire       pwr_up_mask;
   wire       sys_clk;
 
   assign pmod0_1_3_MOSI = spi_pmod_mosi;
@@ -268,14 +269,12 @@ module system_top  #(
   assign dac_fifo_bypass  = gpio_o[60];
 
   // PMOD GPIOs
-  assign pmod0_0_1_PA_ON       = gpio_o[61];
-  assign pmod0_4_2_TR          = gpio_o[62];
-  assign pmod0_5_4_TX_LOAD     = gpio_o[63];
-  assign pmod0_6_6_RX_LOAD     = gpio_o[64];
-  //assign pmod1_6_6_5V_CTRL     = gpio_o[65];
-  //assign pmod1_7_8_PWR_UP_DOWN = gpio_o[66];
-  assign pmod1_6_6_5V_CTRL     = 1'b1;
-  assign pmod1_7_8_PWR_UP_DOWN = 1'b0;
+  assign pmod0_0_1_PA_ON       = pwr_up_mask & gpio_o[61];
+  assign pmod0_4_2_TR          = pwr_up_mask & gpio_o[62];
+  assign pmod0_5_4_TX_LOAD     = pwr_up_mask & gpio_o[63];
+  assign pmod0_6_6_RX_LOAD     = pwr_up_mask & gpio_o[64];
+  assign pmod1_6_6_5V_CTRL     = pwr_up_mask & gpio_o[65];
+  assign pmod1_7_8_PWR_UP_DOWN = pwr_up_mask & gpio_o[66];
 
   // XUD GPIOs
   assign gpio_i[67] = fmc_bob_xud1_pmod_dip;
@@ -368,6 +367,15 @@ module system_top  #(
 
   assign tx_data_p[TX_JESD_L*TX_NUM_LINKS-1:0] = tx_data_p_loc[TX_JESD_L*TX_NUM_LINKS-1:0];
   assign tx_data_n[TX_JESD_L*TX_NUM_LINKS-1:0] = tx_data_n_loc[TX_JESD_L*TX_NUM_LINKS-1:0];
+
+  // Power up logic
+  // Mask gpios during powerup for 10ms
+  assign pwr_up_mask = pwr_up_cnt[20];
+  always @(posedge sys_clk) begin
+    if (~pwr_up_cnt[20]) begin
+      pwr_up_cnt <= pwr_up_cnt + 1;
+    end
+  end
 
 endmodule
 
