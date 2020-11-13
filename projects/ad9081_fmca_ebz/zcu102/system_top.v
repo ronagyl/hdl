@@ -272,8 +272,10 @@ module system_top  #(
   assign pmod0_4_2_TR          = gpio_o[62];
   assign pmod0_5_4_TX_LOAD     = gpio_o[63];
   assign pmod0_6_6_RX_LOAD     = gpio_o[64];
-  assign pmod1_6_6_5V_CTRL     = gpio_o[65];
-  assign pmod1_7_8_PWR_UP_DOWN = gpio_o[66];
+  //assign pmod1_6_6_5V_CTRL     = gpio_o[65];
+  //assign pmod1_7_8_PWR_UP_DOWN = gpio_o[66];
+  assign pmod1_6_6_5V_CTRL     = 1'b1;
+  assign pmod1_7_8_PWR_UP_DOWN = 1'b0;
 
   // XUD GPIOs
   assign gpio_i[67] = fmc_bob_xud1_pmod_dip;
