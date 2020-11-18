@@ -272,19 +272,12 @@ module system_top  #(
   assign dac_fifo_bypass  = gpio_o[60];
 
   // PMOD GPIOs
-//  assign pmod0_0_1_PA_ON       = pwr_up_mask & gpio_o[61];
-//  assign pmod0_4_2_TR          = pwr_up_mask & gpio_o[62];
-//  assign pmod0_5_4_TX_LOAD     = pwr_up_mask & gpio_o[63];
-//  assign pmod0_6_6_RX_LOAD     = pwr_up_mask & gpio_o[64];
-//  assign pmod1_6_6_5V_CTRL     = pwr_up_mask & gpio_o[65];
-//  assign pmod1_7_8_PWR_UP_DOWN = pwr_up_mask & gpio_o[66];
-
-  assign pmod0_0_1_PA_ON       = gpio_t[61] ? 1'bz : gpio_o[61];
-  assign pmod0_4_2_TR          = gpio_t[62] ? 1'bz : gpio_o[62];
-  assign pmod0_5_4_TX_LOAD     = gpio_t[63] ? 1'bz : gpio_o[63];
-  assign pmod0_6_6_RX_LOAD     = gpio_t[64] ? 1'bz : gpio_o[64];
-  assign pmod1_6_6_5V_CTRL     = gpio_t[65] ? 1'bz : gpio_o[65];
-  assign pmod1_7_8_PWR_UP_DOWN = gpio_t[66] ? 1'bz : gpio_o[66];
+  assign pmod0_0_1_PA_ON       = pwr_up_mask ? 1'b0 : gpio_t[61] ? 1'bz : gpio_o[61];
+  assign pmod0_4_2_TR          = pwr_up_mask ? 1'b0 : gpio_t[62] ? 1'bz : gpio_o[62];
+  assign pmod0_5_4_TX_LOAD     = pwr_up_mask ? 1'b0 : gpio_t[63] ? 1'bz : gpio_o[63];
+  assign pmod0_6_6_RX_LOAD     = pwr_up_mask ? 1'b0 : gpio_t[64] ? 1'bz : gpio_o[64];
+  assign pmod1_6_6_5V_CTRL     = pwr_up_mask ? 1'b0 : gpio_t[65] ? 1'bz : gpio_o[65];
+  assign pmod1_7_8_PWR_UP_DOWN = pwr_up_mask ? 1'b0 : gpio_t[66] ? 1'bz : gpio_o[66];
 
   assign proto_hdr[5:0] = gpio_t[66:61];
   assign proto_hdr[9:6] = 4'b0;
