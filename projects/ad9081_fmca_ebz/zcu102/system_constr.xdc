@@ -125,3 +125,15 @@ set_property         -dict {PACKAGE_PIN Y7    IOSTANDARD LVCMOS18               
 set_property         -dict {PACKAGE_PIN AE3   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud2_sclk      ]; ## FMC1.G12 	XM105.J1.33
 set_property         -dict {PACKAGE_PIN Y8    IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud2_unused    ]; ## FMC1.C22 	XM105.J1.34
 
+# Debug port (Proto header)
+set_property -dict {PACKAGE_PIN H13 IOSTANDARD LVCMOS33} [get_ports proto_hdr[0]]  ;# J3 24 L8P_HDGC_50_P
+set_property -dict {PACKAGE_PIN G13 IOSTANDARD LVCMOS33} [get_ports proto_hdr[1]]  ;# J3 22 L8N_HDGC_50_N
+set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports proto_hdr[2]]  ;# J3 20 L11P_AD9P_50_P
+set_property -dict {PACKAGE_PIN G16 IOSTANDARD LVCMOS33} [get_ports proto_hdr[3]]  ;# J3 18 L11N_AD9N_50_N
+set_property -dict {PACKAGE_PIN J16 IOSTANDARD LVCMOS33} [get_ports proto_hdr[4]]  ;# J3 16 L12P_AD8P_50_P
+set_property -dict {PACKAGE_PIN J15 IOSTANDARD LVCMOS33} [get_ports proto_hdr[5]]  ;# J3 14 L12N_AD8N_50_N
+set_property -dict {PACKAGE_PIN G15 IOSTANDARD LVCMOS33} [get_ports proto_hdr[6]]  ;# J3 12 L9P_AD11P_50_P
+set_property -dict {PACKAGE_PIN G14 IOSTANDARD LVCMOS33} [get_ports proto_hdr[7]]  ;# J3 10 L9N_AD11N_50_N
+set_property -dict {PACKAGE_PIN J14 IOSTANDARD LVCMOS33} [get_ports proto_hdr[8]]  ;# J3  8 L10P_AD10P_50_P
+set_property -dict {PACKAGE_PIN H14 IOSTANDARD LVCMOS33} [get_ports proto_hdr[9]]  ;# J3  6 L10N_AD10N_50_N
+

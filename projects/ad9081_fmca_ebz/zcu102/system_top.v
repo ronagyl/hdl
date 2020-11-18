@@ -117,7 +117,10 @@ module system_top  #(
   input         fmc_bob_xud2_miso,
   input         fmc_bob_xud2_pmod_dip,
   output        fmc_bob_xud2_sclk,
-  input         fmc_bob_xud2_unused
+  input         fmc_bob_xud2_unused,
+
+  //debug hdr
+  output       [9:0]      proto_hdr
 
 );
 
