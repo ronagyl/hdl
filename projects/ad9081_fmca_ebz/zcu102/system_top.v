@@ -286,6 +286,9 @@ module system_top  #(
   assign pmod1_6_6_5V_CTRL     = gpio_t[65] ? 1'bz : gpio_o[65];
   assign pmod1_7_8_PWR_UP_DOWN = gpio_t[66] ? 1'bz : gpio_o[66];
 
+  assign proto_hdr[5:0] = gpio_t[66:61];
+  assign proto_hdr[9:6] = 4'b0;
+
   // XUD GPIOs
   assign gpio_i[67] = fmc_bob_xud1_pmod_dip;
   assign gpio_i[68] = fmc_bob_xud2_pmod_dip;
