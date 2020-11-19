@@ -376,7 +376,7 @@ module system_top  #(
 
   // Power up logic
   // Mask gpios during powerup for 10ms
-  assign pwr_up_mask = pwr_up_cnt[20];
+  assign pwr_up_mask = ~pwr_up_cnt[20];
   always @(posedge sys_clk) begin
     if (~pwr_up_cnt[20]) begin
       pwr_up_cnt <= pwr_up_cnt + 1;
