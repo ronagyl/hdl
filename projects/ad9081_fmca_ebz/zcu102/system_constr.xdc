@@ -105,14 +105,14 @@ set_property         -dict {PACKAGE_PIN J19   IOSTANDARD LVCMOS33               
 
 # XUD #1 PMOD
 
-set_property         -dict {PACKAGE_PIN AJ5   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_cs_n      ]; ## FMC1.D09	XM105.J1.7
-set_property         -dict {PACKAGE_PIN AF8   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_scl       ]; ## FMC1.H17	XM105.J1.8
-set_property         -dict {PACKAGE_PIN AJ6   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_mosi      ]; ## FMC1.D08	XM105.J1.5
-set_property         -dict {PACKAGE_PIN AE8   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_sda       ]; ## FMC1.H16	XM105.J1.6
-set_property         -dict {PACKAGE_PIN AF5   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_miso      ]; ## FMC1.G07	XM105.J1.3
-set_property         -dict {PACKAGE_PIN AJ4   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_pmod_dip  ]; ## FMC1.C15	XM105.J1.4
-set_property         -dict {PACKAGE_PIN AE5   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_sclk      ]; ## FMC1.G06	XM105.J1.1
-set_property         -dict {PACKAGE_PIN AH4   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_unused    ]; ## FMC1.C14	XM105.J1.2
+set_property         -dict {PACKAGE_PIN AJ5   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_cs_n      ]; ## FMC1.D09	XM105.J1.7  AD-DAC-FMC-ADP.J18.D9
+set_property         -dict {PACKAGE_PIN AF8   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_scl       ]; ## FMC1.H17	XM105.J1.8  AD-DAC-FMC-ADP.J18.B3
+set_property         -dict {PACKAGE_PIN AJ6   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_mosi      ]; ## FMC1.D08	XM105.J1.5  AD-DAC-FMC-ADP.J18.C9
+set_property         -dict {PACKAGE_PIN AE8   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_sda       ]; ## FMC1.H16	XM105.J1.6  AD-DAC-FMC-ADP.J18.A3
+set_property         -dict {PACKAGE_PIN AF5   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_miso      ]; ## FMC1.G07	XM105.J1.3  AD-DAC-FMC-ADP.J17.B2
+set_property         -dict {PACKAGE_PIN AJ4   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_pmod_dip  ]; ## FMC1.C15	XM105.J1.4  AD-DAC-FMC-ADP.J17.B10
+set_property         -dict {PACKAGE_PIN AE5   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_sclk      ]; ## FMC1.G06	XM105.J1.1  AD-DAC-FMC-ADP.J17.A2
+set_property         -dict {PACKAGE_PIN AH4   IOSTANDARD LVCMOS18                       } [get_ports fmc_bob_xud1_unused    ]; ## FMC1.C14	XM105.J1.2  AD-DAC-FMC-ADP.J17.A10
 
 # Debug port (Proto header)
 set_property -dict {PACKAGE_PIN H13 IOSTANDARD LVCMOS33} [get_ports proto_hdr[0]]  ;# J3 24 L8P_HDGC_50_P
