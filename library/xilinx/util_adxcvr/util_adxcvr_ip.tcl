@@ -353,6 +353,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_0 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_0 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 0) and \
@@ -360,6 +361,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_0 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_0 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 0) or \
@@ -416,6 +418,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_1 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_1 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 1) and \
@@ -423,6 +426,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_1 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_1 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency {spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 2} \
   [ipx::get_bus_interfaces up_es_2 -of_objects [ipx::current_core]]
@@ -468,6 +472,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_2 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_2 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 2) and \
@@ -475,6 +480,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_2 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_2 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency {spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 3} \
   [ipx::get_bus_interfaces up_es_3 -of_objects [ipx::current_core]]
@@ -520,6 +526,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_3 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_3 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 3) and \
@@ -527,6 +534,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_3 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_3 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency {spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 4} \
   [ipx::get_bus_interfaces up_es_4 -of_objects [ipx::current_core]]
@@ -572,6 +580,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_4 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_4 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 4) and \
@@ -579,6 +588,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_4 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_4 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 4) or \
@@ -635,6 +645,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_5 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_5 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 5) and \
@@ -642,6 +653,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_5 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_5 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency {spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 6} \
   [ipx::get_bus_interfaces up_es_6 -of_objects [ipx::current_core]]
@@ -687,6 +699,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_6 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_6 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 6) and \
@@ -694,6 +707,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_6 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_6 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency {spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 7} \
   [ipx::get_bus_interfaces up_es_7 -of_objects [ipx::current_core]]
@@ -739,6 +753,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_7 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_7 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 7) and \
@@ -746,6 +761,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_7 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_7 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency {spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 8} \
   [ipx::get_bus_interfaces up_es_8 -of_objects [ipx::current_core]]
@@ -791,6 +807,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_8 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_8 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 8) and \
@@ -798,6 +815,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_8 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_8 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 8) or \
@@ -854,6 +872,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_9 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_9 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 9) and \
@@ -861,6 +880,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_9 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_9 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency {spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 10} \
   [ipx::get_bus_interfaces up_es_10 -of_objects [ipx::current_core]]
@@ -906,6 +926,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_10 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_10 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 10) and \
@@ -913,6 +934,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_10 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_10 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency {spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 11} \
   [ipx::get_bus_interfaces up_es_11 -of_objects [ipx::current_core]]
@@ -958,6 +980,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_11 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_11 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 11) and \
@@ -965,6 +988,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_11 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_11 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency {spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 12} \
   [ipx::get_bus_interfaces up_es_12 -of_objects [ipx::current_core]]
@@ -1010,6 +1034,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_12 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_12 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 12) and \
@@ -1017,6 +1042,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_12 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_12 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 12) or \
@@ -1073,6 +1099,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_13 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_13 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 13) and \
@@ -1080,6 +1107,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_13 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_13 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency {spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 14} \
   [ipx::get_bus_interfaces up_es_14 -of_objects [ipx::current_core]]
@@ -1125,6 +1153,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_14 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_14 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 14) and \
@@ -1132,6 +1161,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_14 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_14 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency {spirit:decode(id('MODELPARAM_VALUE.RX_NUM_OF_LANES')) > 15} \
   [ipx::get_bus_interfaces up_es_15 -of_objects [ipx::current_core]]
@@ -1177,6 +1207,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports rx_clk_2x_15 -of_objects [ipx::current_core]] \
+  [ipx::get_ports rx_out_clk_div2_15 -of_objects [ipx::current_core]] \
 
 set_property enablement_dependency \
   {(spirit:decode(id('MODELPARAM_VALUE.TX_NUM_OF_LANES')) > 15) and \
@@ -1184,6 +1215,7 @@ set_property enablement_dependency \
   ((spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 5) or \
    (spirit:decode(id('MODELPARAM_VALUE.XCVR_TYPE')) = 8))} \
   [ipx::get_ports tx_clk_2x_15 -of_objects [ipx::current_core]] \
+  [ipx::get_ports tx_out_clk_div2_15 -of_objects [ipx::current_core]] \
 
 adi_add_auto_fpga_spec_params
 set cc [ipx::current_core]

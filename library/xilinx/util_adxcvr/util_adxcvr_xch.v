@@ -110,6 +110,7 @@ module util_adxcvr_xch #(
   input           rx_n,
 
   output                           rx_out_clk,
+  output                           rx_out_clk_div2,
   input                            rx_clk,
   input                            rx_clk_2x,
   output  [DATA_PATH_WIDTH-1:0]    rx_charisk,
@@ -126,6 +127,7 @@ module util_adxcvr_xch #(
   output          tx_n,
 
   output                           tx_out_clk,
+  output                           tx_out_clk_div2,
   input                            tx_clk,
   input                            tx_clk_2x,
   input   [DATA_PATH_WIDTH-1:0]    tx_charisk,
@@ -943,6 +945,24 @@ module util_adxcvr_xch #(
     .DIV (3'd0),
     .I (tx_out_clk_s),
     .O (tx_out_clk));
+
+  BUFG_GT i_rx_div2_bufg (
+    .CE (1'b1),
+    .CEMASK (1'b0),
+    .CLR (1'b0),
+    .CLRMASK (1'b0),
+    .DIV (3'd1),
+    .I (rx_out_clk_s),
+    .O (rx_out_clk_div2));
+
+    BUFG_GT i_tx_div2_bufg (
+    .CE (1'b1),
+    .CEMASK (1'b0),
+    .CLR (1'b0),
+    .CLRMASK (1'b0),
+    .DIV (3'd1),
+    .I (tx_out_clk_s),
+    .O (tx_out_clk_div2));
   end
   endgenerate
 
@@ -1698,6 +1718,24 @@ module util_adxcvr_xch #(
     .DIV (3'd0),
     .I (tx_out_clk_s),
     .O (tx_out_clk));
+
+  BUFG_GT i_rx_div2_bufg (
+    .CE (1'b1),
+    .CEMASK (1'b0),
+    .CLR (1'b0),
+    .CLRMASK (1'b0),
+    .DIV (3'd1),
+    .I (rx_out_clk_s),
+    .O (rx_out_clk_div2));
+
+    BUFG_GT i_tx_div2_bufg (
+    .CE (1'b1),
+    .CEMASK (1'b0),
+    .CLR (1'b0),
+    .CLRMASK (1'b0),
+    .DIV (3'd1),
+    .I (tx_out_clk_s),
+    .O (tx_out_clk_div2));
   end
   endgenerate
 
