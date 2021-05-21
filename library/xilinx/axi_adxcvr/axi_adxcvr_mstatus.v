@@ -42,14 +42,17 @@ module axi_adxcvr_mstatus (
 
   input           up_pll_locked_in,
   input           up_rst_done_in,
+  input           up_progdiv_rst_done_in,
   input           up_prbserr_in,
   input           up_prbslocked_in,
   input           up_pll_locked,
   input           up_rst_done,
+  input           up_progdiv_rst_done,
   input           up_prbserr,
   input           up_prbslocked,
   output          up_pll_locked_out,
   output          up_rst_done_out,
+  output          up_progdiv_rst_done_out,
   output          up_prbserr_out,
   output          up_prbslocked_out);
 
@@ -62,6 +65,7 @@ module axi_adxcvr_mstatus (
 
   reg             up_pll_locked_int = 'd0;
   reg             up_rst_done_int = 'd0;
+  reg             up_progdiv_rst_done_int = 'd0;
   reg             up_prbserr_int = 'd0;
   reg             up_prbslocked_int = 'd0;
 
@@ -69,6 +73,7 @@ module axi_adxcvr_mstatus (
 
   wire            up_pll_locked_s;
   wire            up_rst_done_s;
+  wire            up_progdiv_rst_done_s;
   wire            up_prbserr_s;
   wire            up_prbslocked_s;
 
@@ -76,11 +81,13 @@ module axi_adxcvr_mstatus (
 
   assign up_pll_locked_out = up_pll_locked_int;
   assign up_rst_done_out = up_rst_done_int;
+  assign up_progdiv_rst_done_out = up_progdiv_rst_done_int;
   assign up_prbserr_out = up_prbserr_int;
   assign up_prbslocked_out = up_prbslocked_int;
 
   assign up_pll_locked_s = (XCVR_ID < NUM_OF_LANES) ? up_pll_locked : 1'b1;
   assign up_rst_done_s = (XCVR_ID < NUM_OF_LANES) ? up_rst_done : 1'b1;
+  assign up_progdiv_rst_done_s = (XCVR_ID < NUM_OF_LANES) ? up_progdiv_rst_done : 1'b1;
   assign up_prbserr_s = (XCVR_ID < NUM_OF_LANES) ? up_prbserr : 1'b0;
   assign up_prbslocked_s = (XCVR_ID < NUM_OF_LANES) ? up_prbslocked : 1'b1;
 
@@ -88,11 +95,13 @@ module axi_adxcvr_mstatus (
     if (up_rstn == 1'b0) begin
       up_pll_locked_int <= 1'd0;
       up_rst_done_int <= 1'd0;
+      up_progdiv_rst_done_int <= 1'd0;
       up_prbserr_int <= 1'd0;
       up_prbslocked_int <= 1'd0;
     end else begin
       up_pll_locked_int <= up_pll_locked_in & up_pll_locked_s;
       up_rst_done_int <= up_rst_done_in & up_rst_done_s;
+      up_progdiv_rst_done_int <= up_progdiv_rst_done_in & up_progdiv_rst_done_s;
       up_prbserr_int <= up_prbserr_in | up_prbserr_s;
       up_prbslocked_int <= up_prbslocked_in & up_prbslocked_s;
     end

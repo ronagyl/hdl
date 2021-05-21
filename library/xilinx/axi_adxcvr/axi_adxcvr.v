@@ -76,8 +76,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_0,
   output          up_ch_rst_0,
+  output          up_ch_progdiv_rst_0,
   output          up_ch_user_ready_0,
   input           up_ch_rst_done_0,
+  input           up_ch_progdiv_rst_done_0,
   output          up_ch_prbsforceerr_0,
   output   [ 3:0] up_ch_prbssel_0,
   output          up_ch_prbscntreset_0,
@@ -107,8 +109,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_1,
   output          up_ch_rst_1,
+  output          up_ch_progdiv_rst_1,
   output          up_ch_user_ready_1,
   input           up_ch_rst_done_1,
+  input           up_ch_progdiv_rst_done_1,
   output          up_ch_prbsforceerr_1,
   output   [ 3:0] up_ch_prbssel_1,
   output          up_ch_prbscntreset_1,
@@ -138,8 +142,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_2,
   output          up_ch_rst_2,
+  output          up_ch_progdiv_rst_2,
   output          up_ch_user_ready_2,
   input           up_ch_rst_done_2,
+  input           up_ch_progdiv_rst_done_2,
   output          up_ch_prbsforceerr_2,
   output   [ 3:0] up_ch_prbssel_2,
   output          up_ch_prbscntreset_2,
@@ -169,8 +175,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_3,
   output          up_ch_rst_3,
+  output          up_ch_progdiv_rst_3,
   output          up_ch_user_ready_3,
   input           up_ch_rst_done_3,
+  input           up_ch_progdiv_rst_done_3,
   output          up_ch_prbsforceerr_3,
   output   [ 3:0] up_ch_prbssel_3,
   output          up_ch_prbscntreset_3,
@@ -207,8 +215,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_4,
   output          up_ch_rst_4,
+  output          up_ch_progdiv_rst_4,
   output          up_ch_user_ready_4,
   input           up_ch_rst_done_4,
+  input           up_ch_progdiv_rst_done_4,
   output          up_ch_prbsforceerr_4,
   output   [ 3:0] up_ch_prbssel_4,
   output          up_ch_prbscntreset_4,
@@ -238,8 +248,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_5,
   output          up_ch_rst_5,
+  output          up_ch_progdiv_rst_5,
   output          up_ch_user_ready_5,
   input           up_ch_rst_done_5,
+  input           up_ch_progdiv_rst_done_5,
   output          up_ch_prbsforceerr_5,
   output   [ 3:0] up_ch_prbssel_5,
   output          up_ch_prbscntreset_5,
@@ -269,8 +281,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_6,
   output          up_ch_rst_6,
+  output          up_ch_progdiv_rst_6,
   output          up_ch_user_ready_6,
   input           up_ch_rst_done_6,
+  input           up_ch_progdiv_rst_done_6,
   output          up_ch_prbsforceerr_6,
   output   [ 3:0] up_ch_prbssel_6,
   output          up_ch_prbscntreset_6,
@@ -300,8 +314,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_7,
   output          up_ch_rst_7,
+  output          up_ch_progdiv_rst_7,
   output          up_ch_user_ready_7,
   input           up_ch_rst_done_7,
+  input           up_ch_progdiv_rst_done_7,
   output          up_ch_prbsforceerr_7,
   output   [ 3:0] up_ch_prbssel_7,
   output          up_ch_prbscntreset_7,
@@ -338,8 +354,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_8,
   output          up_ch_rst_8,
+  output          up_ch_progdiv_rst_8,
   output          up_ch_user_ready_8,
   input           up_ch_rst_done_8,
+  input           up_ch_progdiv_rst_done_8,
   output          up_ch_prbsforceerr_8,
   output   [ 3:0] up_ch_prbssel_8,
   output          up_ch_prbscntreset_8,
@@ -369,8 +387,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_9,
   output          up_ch_rst_9,
+  output          up_ch_progdiv_rst_9,
   output          up_ch_user_ready_9,
   input           up_ch_rst_done_9,
+  input           up_ch_progdiv_rst_done_9,
   output          up_ch_prbsforceerr_9,
   output   [ 3:0] up_ch_prbssel_9,
   output          up_ch_prbscntreset_9,
@@ -400,8 +420,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_10,
   output          up_ch_rst_10,
+  output          up_ch_progdiv_rst_10,
   output          up_ch_user_ready_10,
   input           up_ch_rst_done_10,
+  input           up_ch_progdiv_rst_done_10,
   output          up_ch_prbsforceerr_10,
   output   [ 3:0] up_ch_prbssel_10,
   output          up_ch_prbscntreset_10,
@@ -431,8 +453,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_11,
   output          up_ch_rst_11,
+  output          up_ch_progdiv_rst_11,
   output          up_ch_user_ready_11,
   input           up_ch_rst_done_11,
+  input           up_ch_progdiv_rst_done_11,
   output          up_ch_prbsforceerr_11,
   output   [ 3:0] up_ch_prbssel_11,
   output          up_ch_prbscntreset_11,
@@ -469,8 +493,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_12,
   output          up_ch_rst_12,
+  output          up_ch_progdiv_rst_12,
   output          up_ch_user_ready_12,
   input           up_ch_rst_done_12,
+  input           up_ch_progdiv_rst_done_12,
   output          up_ch_prbsforceerr_12,
   output   [ 3:0] up_ch_prbssel_12,
   output          up_ch_prbscntreset_12,
@@ -500,8 +526,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_13,
   output          up_ch_rst_13,
+  output          up_ch_progdiv_rst_13,
   output          up_ch_user_ready_13,
   input           up_ch_rst_done_13,
+  input           up_ch_progdiv_rst_done_13,
   output          up_ch_prbsforceerr_13,
   output   [ 3:0] up_ch_prbssel_13,
   output          up_ch_prbscntreset_13,
@@ -531,8 +559,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_14,
   output          up_ch_rst_14,
+  output          up_ch_progdiv_rst_14,
   output          up_ch_user_ready_14,
   input           up_ch_rst_done_14,
+  input           up_ch_progdiv_rst_done_14,
   output          up_ch_prbsforceerr_14,
   output   [ 3:0] up_ch_prbssel_14,
   output          up_ch_prbscntreset_14,
@@ -562,8 +592,10 @@ module axi_adxcvr #(
 
   input           up_ch_pll_locked_15,
   output          up_ch_rst_15,
+  output          up_ch_progdiv_rst_15,
   output          up_ch_user_ready_15,
   input           up_ch_rst_done_15,
+  input           up_ch_progdiv_rst_done_15,
   output          up_ch_prbsforceerr_15,
   output   [ 3:0] up_ch_prbssel_15,
   output          up_ch_prbscntreset_15,
@@ -681,6 +713,7 @@ module axi_adxcvr #(
   wire    [15:0]  up_es_rdata_15_s;
   wire            up_es_ready_15_s;
   wire            up_ch_rst;
+  wire            up_ch_progdiv_rst;
   wire            up_ch_user_ready;
   wire            up_ch_lpm_dfe_n;
   wire    [ 2:0]  up_ch_rate;
@@ -694,66 +727,82 @@ module axi_adxcvr #(
   wire            up_ch_prbscntreset;
   wire            up_ch_pll_locked_0_s;
   wire            up_ch_rst_done_0_s;
+  wire            up_ch_progdiv_rst_done_0_s;
   wire            up_ch_prbserr_0_s;
   wire            up_ch_prbslocked_0_s;
   wire            up_ch_pll_locked_1_s;
   wire            up_ch_rst_done_1_s;
+  wire            up_ch_progdiv_rst_done_1_s;
   wire            up_ch_prbserr_1_s;
   wire            up_ch_prbslocked_1_s;
   wire            up_ch_pll_locked_2_s;
   wire            up_ch_rst_done_2_s;
+  wire            up_ch_progdiv_rst_done_2_s;
   wire            up_ch_prbserr_2_s;
   wire            up_ch_prbslocked_2_s;
   wire            up_ch_pll_locked_3_s;
   wire            up_ch_rst_done_3_s;
+  wire            up_ch_progdiv_rst_done_3_s;
   wire            up_ch_prbserr_3_s;
   wire            up_ch_prbslocked_3_s;
   wire            up_ch_pll_locked_4_s;
   wire            up_ch_rst_done_4_s;
+  wire            up_ch_progdiv_rst_done_4_s;
   wire            up_ch_prbserr_4_s;
   wire            up_ch_prbslocked_4_s;
   wire            up_ch_pll_locked_5_s;
   wire            up_ch_rst_done_5_s;
+  wire            up_ch_progdiv_rst_done_5_s;
   wire            up_ch_prbserr_5_s;
   wire            up_ch_prbslocked_5_s;
   wire            up_ch_pll_locked_6_s;
   wire            up_ch_rst_done_6_s;
+  wire            up_ch_progdiv_rst_done_6_s;
   wire            up_ch_prbserr_6_s;
   wire            up_ch_prbslocked_6_s;
   wire            up_ch_pll_locked_7_s;
   wire            up_ch_rst_done_7_s;
+  wire            up_ch_progdiv_rst_done_7_s;
   wire            up_ch_prbserr_7_s;
   wire            up_ch_prbslocked_7_s;
   wire            up_ch_pll_locked_8_s;
   wire            up_ch_rst_done_8_s;
+  wire            up_ch_progdiv_rst_done_8_s;
   wire            up_ch_prbserr_8_s;
   wire            up_ch_prbslocked_8_s;
   wire            up_ch_pll_locked_9_s;
   wire            up_ch_rst_done_9_s;
+  wire            up_ch_progdiv_rst_done_9_s;
   wire            up_ch_prbserr_9_s;
   wire            up_ch_prbslocked_9_s;
   wire            up_ch_pll_locked_10_s;
   wire            up_ch_rst_done_10_s;
+  wire            up_ch_progdiv_rst_done_10_s;
   wire            up_ch_prbserr_10_s;
   wire            up_ch_prbslocked_10_s;
   wire            up_ch_pll_locked_11_s;
   wire            up_ch_rst_done_11_s;
+  wire            up_ch_progdiv_rst_done_11_s;
   wire            up_ch_prbserr_11_s;
   wire            up_ch_prbslocked_11_s;
   wire            up_ch_pll_locked_12_s;
   wire            up_ch_rst_done_12_s;
+  wire            up_ch_progdiv_rst_done_12_s;
   wire            up_ch_prbserr_12_s;
   wire            up_ch_prbslocked_12_s;
   wire            up_ch_pll_locked_13_s;
   wire            up_ch_rst_done_13_s;
+  wire            up_ch_progdiv_rst_done_13_s;
   wire            up_ch_prbserr_13_s;
   wire            up_ch_prbslocked_13_s;
   wire            up_ch_pll_locked_14_s;
   wire            up_ch_rst_done_14_s;
+  wire            up_ch_progdiv_rst_done_14_s;
   wire            up_ch_prbserr_14_s;
   wire            up_ch_prbslocked_14_s;
   wire            up_ch_pll_locked_15_s;
   wire            up_ch_rst_done_15_s;
+  wire            up_ch_progdiv_rst_done_15_s;
   wire            up_ch_prbserr_15_s;
   wire            up_ch_prbslocked_15_s;
   wire    [ 7:0]  up_ch_sel;
@@ -880,6 +929,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_0_s));
 
   assign up_ch_rst_0 = up_ch_rst;
+  assign up_ch_progdiv_rst_0 = up_ch_progdiv_rst;
   assign up_ch_user_ready_0 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_0 = up_ch_lpm_dfe_n;
   assign up_ch_rate_0 = up_ch_rate;
@@ -900,14 +950,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (1'd1),
     .up_rst_done_in (1'd1),
+    .up_progdiv_rst_done_in (1'd1),
     .up_prbserr_in (1'd0),
     .up_prbslocked_in (1'd1),
     .up_pll_locked (up_ch_pll_locked_0),
     .up_rst_done (up_ch_rst_done_0),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_0),
     .up_prbserr (up_ch_prbserr_0),
     .up_prbslocked (up_ch_prbslocked_0),
     .up_pll_locked_out (up_ch_pll_locked_0_s),
     .up_rst_done_out (up_ch_rst_done_0_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_0_s),
     .up_prbserr_out (up_ch_prbserr_0_s),
     .up_prbslocked_out (up_ch_prbslocked_0_s));
 
@@ -952,6 +1005,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_1_s));
 
   assign up_ch_rst_1 = up_ch_rst;
+  assign up_ch_progdiv_rst_1 = up_ch_progdiv_rst;
   assign up_ch_user_ready_1 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_1 = up_ch_lpm_dfe_n;
   assign up_ch_rate_1 = up_ch_rate;
@@ -972,14 +1026,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_0_s),
     .up_rst_done_in (up_ch_rst_done_0_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_0_s),
     .up_prbserr_in (up_ch_prbserr_0_s),
     .up_prbslocked_in (up_ch_prbslocked_0_s),
     .up_pll_locked (up_ch_pll_locked_1),
     .up_rst_done (up_ch_rst_done_1),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_1),
     .up_prbserr (up_ch_prbserr_1),
     .up_prbslocked (up_ch_prbslocked_1),
     .up_pll_locked_out (up_ch_pll_locked_1_s),
     .up_rst_done_out (up_ch_rst_done_1_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_1_s),
     .up_prbserr_out (up_ch_prbserr_1_s),
     .up_prbslocked_out (up_ch_prbslocked_1_s));
 
@@ -1024,6 +1081,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_2_s));
 
   assign up_ch_rst_2 = up_ch_rst;
+  assign up_ch_progdiv_rst_2 = up_ch_progdiv_rst;
   assign up_ch_user_ready_2 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_2 = up_ch_lpm_dfe_n;
   assign up_ch_rate_2 = up_ch_rate;
@@ -1044,14 +1102,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_1_s),
     .up_rst_done_in (up_ch_rst_done_1_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_1_s),
     .up_prbserr_in (up_ch_prbserr_1_s),
     .up_prbslocked_in (up_ch_prbslocked_1_s),
     .up_pll_locked (up_ch_pll_locked_2),
     .up_rst_done (up_ch_rst_done_2),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_2),
     .up_prbserr (up_ch_prbserr_2),
     .up_prbslocked (up_ch_prbslocked_2),
     .up_pll_locked_out (up_ch_pll_locked_2_s),
     .up_rst_done_out (up_ch_rst_done_2_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_2_s),
     .up_prbserr_out (up_ch_prbserr_2_s),
     .up_prbslocked_out (up_ch_prbslocked_2_s));
 
@@ -1096,6 +1157,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_3_s));
 
   assign up_ch_rst_3 = up_ch_rst;
+  assign up_ch_progdiv_rst_3 = up_ch_progdiv_rst;
   assign up_ch_user_ready_3 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_3 = up_ch_lpm_dfe_n;
   assign up_ch_rate_3 = up_ch_rate;
@@ -1116,14 +1178,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_2_s),
     .up_rst_done_in (up_ch_rst_done_2_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_2_s),
     .up_prbserr_in (up_ch_prbserr_2_s),
     .up_prbslocked_in (up_ch_prbslocked_2_s),
     .up_pll_locked (up_ch_pll_locked_3),
     .up_rst_done (up_ch_rst_done_3),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_3),
     .up_prbserr (up_ch_prbserr_3),
     .up_prbslocked (up_ch_prbslocked_3),
     .up_pll_locked_out (up_ch_pll_locked_3_s),
     .up_rst_done_out (up_ch_rst_done_3_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_3_s),
     .up_prbserr_out (up_ch_prbserr_3_s),
     .up_prbslocked_out (up_ch_prbslocked_3_s));
 
@@ -1188,6 +1253,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_4_s));
 
   assign up_ch_rst_4 = up_ch_rst;
+  assign up_ch_progdiv_rst_4 = up_ch_progdiv_rst;
   assign up_ch_user_ready_4 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_4 = up_ch_lpm_dfe_n;
   assign up_ch_rate_4 = up_ch_rate;
@@ -1208,14 +1274,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_3_s),
     .up_rst_done_in (up_ch_rst_done_3_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_3_s),
     .up_prbserr_in (up_ch_prbserr_3_s),
     .up_prbslocked_in (up_ch_prbslocked_3_s),
     .up_pll_locked (up_ch_pll_locked_4),
     .up_rst_done (up_ch_rst_done_4),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_4),
     .up_prbserr (up_ch_prbserr_4),
     .up_prbslocked (up_ch_prbslocked_4),
     .up_pll_locked_out (up_ch_pll_locked_4_s),
     .up_rst_done_out (up_ch_rst_done_4_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_4_s),
     .up_prbserr_out (up_ch_prbserr_4_s),
     .up_prbslocked_out (up_ch_prbslocked_4_s));
 
@@ -1260,6 +1329,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_5_s));
 
   assign up_ch_rst_5 = up_ch_rst;
+  assign up_ch_progdiv_rst_5 = up_ch_progdiv_rst;
   assign up_ch_user_ready_5 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_5 = up_ch_lpm_dfe_n;
   assign up_ch_rate_5 = up_ch_rate;
@@ -1280,14 +1350,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_4_s),
     .up_rst_done_in (up_ch_rst_done_4_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_4_s),
     .up_prbserr_in (up_ch_prbserr_4_s),
     .up_prbslocked_in (up_ch_prbslocked_4_s),
     .up_pll_locked (up_ch_pll_locked_5),
     .up_rst_done (up_ch_rst_done_5),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_5),
     .up_prbserr (up_ch_prbserr_5),
     .up_prbslocked (up_ch_prbslocked_5),
     .up_pll_locked_out (up_ch_pll_locked_5_s),
     .up_rst_done_out (up_ch_rst_done_5_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_5_s),
     .up_prbserr_out (up_ch_prbserr_5_s),
     .up_prbslocked_out (up_ch_prbslocked_5_s));
 
@@ -1332,6 +1405,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_6_s));
 
   assign up_ch_rst_6 = up_ch_rst;
+  assign up_ch_progdiv_rst_6 = up_ch_progdiv_rst;
   assign up_ch_user_ready_6 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_6 = up_ch_lpm_dfe_n;
   assign up_ch_rate_6 = up_ch_rate;
@@ -1352,14 +1426,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_5_s),
     .up_rst_done_in (up_ch_rst_done_5_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_5_s),
     .up_prbserr_in (up_ch_prbserr_5_s),
     .up_prbslocked_in (up_ch_prbslocked_5_s),
     .up_pll_locked (up_ch_pll_locked_6),
     .up_rst_done (up_ch_rst_done_6),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_6),
     .up_prbserr (up_ch_prbserr_6),
     .up_prbslocked (up_ch_prbslocked_6),
     .up_pll_locked_out (up_ch_pll_locked_6_s),
     .up_rst_done_out (up_ch_rst_done_6_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_6_s),
     .up_prbserr_out (up_ch_prbserr_6_s),
     .up_prbslocked_out (up_ch_prbslocked_6_s));
 
@@ -1404,6 +1481,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_7_s));
 
   assign up_ch_rst_7 = up_ch_rst;
+  assign up_ch_progdiv_rst_7 = up_ch_progdiv_rst;
   assign up_ch_user_ready_7 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_7 = up_ch_lpm_dfe_n;
   assign up_ch_rate_7 = up_ch_rate;
@@ -1424,14 +1502,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_6_s),
     .up_rst_done_in (up_ch_rst_done_6_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_6_s),
     .up_prbserr_in (up_ch_prbserr_6_s),
     .up_prbslocked_in (up_ch_prbslocked_6_s),
     .up_pll_locked (up_ch_pll_locked_7),
     .up_rst_done (up_ch_rst_done_7),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_7),
     .up_prbserr (up_ch_prbserr_7),
     .up_prbslocked (up_ch_prbslocked_7),
     .up_pll_locked_out (up_ch_pll_locked_7_s),
     .up_rst_done_out (up_ch_rst_done_7_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_7_s),
     .up_prbserr_out (up_ch_prbserr_7_s),
     .up_prbslocked_out (up_ch_prbslocked_7_s));
 
@@ -1496,6 +1577,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_8_s));
 
   assign up_ch_rst_8 = up_ch_rst;
+  assign up_ch_progdiv_rst_8 = up_ch_progdiv_rst;
   assign up_ch_user_ready_8 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_8 = up_ch_lpm_dfe_n;
   assign up_ch_rate_8 = up_ch_rate;
@@ -1516,14 +1598,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_7_s),
     .up_rst_done_in (up_ch_rst_done_7_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_7_s),
     .up_prbserr_in (up_ch_prbserr_7_s),
     .up_prbslocked_in (up_ch_prbslocked_7_s),
     .up_pll_locked (up_ch_pll_locked_8),
     .up_rst_done (up_ch_rst_done_8),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_8),
     .up_prbserr (up_ch_prbserr_8),
     .up_prbslocked (up_ch_prbslocked_8),
     .up_pll_locked_out (up_ch_pll_locked_8_s),
     .up_rst_done_out (up_ch_rst_done_8_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_8_s),
     .up_prbserr_out (up_ch_prbserr_8_s),
     .up_prbslocked_out (up_ch_prbslocked_8_s));
 
@@ -1568,6 +1653,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_9_s));
 
   assign up_ch_rst_9 = up_ch_rst;
+  assign up_ch_progdiv_rst_9 = up_ch_progdiv_rst;
   assign up_ch_user_ready_9 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_9 = up_ch_lpm_dfe_n;
   assign up_ch_rate_9 = up_ch_rate;
@@ -1588,14 +1674,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_8_s),
     .up_rst_done_in (up_ch_rst_done_8_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_8_s),
     .up_prbserr_in (up_ch_prbserr_8_s),
     .up_prbslocked_in (up_ch_prbslocked_8_s),
     .up_pll_locked (up_ch_pll_locked_9),
     .up_rst_done (up_ch_rst_done_9),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_9),
     .up_prbserr (up_ch_prbserr_9),
     .up_prbslocked (up_ch_prbslocked_9),
     .up_pll_locked_out (up_ch_pll_locked_9_s),
     .up_rst_done_out (up_ch_rst_done_9_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_9_s),
     .up_prbserr_out (up_ch_prbserr_9_s),
     .up_prbslocked_out (up_ch_prbslocked_9_s));
 
@@ -1640,6 +1729,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_10_s));
 
   assign up_ch_rst_10 = up_ch_rst;
+  assign up_ch_progdiv_rst_10 = up_ch_progdiv_rst;
   assign up_ch_user_ready_10 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_10 = up_ch_lpm_dfe_n;
   assign up_ch_rate_10 = up_ch_rate;
@@ -1660,14 +1750,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_9_s),
     .up_rst_done_in (up_ch_rst_done_9_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_9_s),
     .up_prbserr_in (up_ch_prbserr_9_s),
     .up_prbslocked_in (up_ch_prbslocked_9_s),
     .up_pll_locked (up_ch_pll_locked_10),
     .up_rst_done (up_ch_rst_done_10),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_10),
     .up_prbserr (up_ch_prbserr_10),
     .up_prbslocked (up_ch_prbslocked_10),
     .up_pll_locked_out (up_ch_pll_locked_10_s),
     .up_rst_done_out (up_ch_rst_done_10_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_10_s),
     .up_prbserr_out (up_ch_prbserr_10_s),
     .up_prbslocked_out (up_ch_prbslocked_10_s));
 
@@ -1712,6 +1805,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_11_s));
 
   assign up_ch_rst_11 = up_ch_rst;
+  assign up_ch_progdiv_rst_11 = up_ch_progdiv_rst;
   assign up_ch_user_ready_11 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_11 = up_ch_lpm_dfe_n;
   assign up_ch_rate_11 = up_ch_rate;
@@ -1732,14 +1826,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_10_s),
     .up_rst_done_in (up_ch_rst_done_10_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_10_s),
     .up_prbserr_in (up_ch_prbserr_10_s),
     .up_prbslocked_in (up_ch_prbslocked_10_s),
     .up_pll_locked (up_ch_pll_locked_11),
     .up_rst_done (up_ch_rst_done_11),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_11),
     .up_prbserr (up_ch_prbserr_11),
     .up_prbslocked (up_ch_prbslocked_11),
     .up_pll_locked_out (up_ch_pll_locked_11_s),
     .up_rst_done_out (up_ch_rst_done_11_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_11_s),
     .up_prbserr_out (up_ch_prbserr_11_s),
     .up_prbslocked_out (up_ch_prbslocked_11_s));
 
@@ -1804,6 +1901,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_12_s));
 
   assign up_ch_rst_12 = up_ch_rst;
+  assign up_ch_progdiv_rst_12 = up_ch_progdiv_rst;
   assign up_ch_user_ready_12 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_12 = up_ch_lpm_dfe_n;
   assign up_ch_rate_12 = up_ch_rate;
@@ -1824,14 +1922,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_11_s),
     .up_rst_done_in (up_ch_rst_done_11_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_11_s),
     .up_prbserr_in (up_ch_prbserr_11_s),
     .up_prbslocked_in (up_ch_prbslocked_11_s),
     .up_pll_locked (up_ch_pll_locked_12),
     .up_rst_done (up_ch_rst_done_12),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_12),
     .up_prbserr (up_ch_prbserr_12),
     .up_prbslocked (up_ch_prbslocked_12),
     .up_pll_locked_out (up_ch_pll_locked_12_s),
     .up_rst_done_out (up_ch_rst_done_12_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_12_s),
     .up_prbserr_out (up_ch_prbserr_12_s),
     .up_prbslocked_out (up_ch_prbslocked_12_s));
 
@@ -1876,6 +1977,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_13_s));
 
   assign up_ch_rst_13 = up_ch_rst;
+  assign up_ch_progdiv_rst_13 = up_ch_progdiv_rst;
   assign up_ch_user_ready_13 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_13 = up_ch_lpm_dfe_n;
   assign up_ch_rate_13 = up_ch_rate;
@@ -1896,14 +1998,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_12_s),
     .up_rst_done_in (up_ch_rst_done_12_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_12_s),
     .up_prbserr_in (up_ch_prbserr_12_s),
     .up_prbslocked_in (up_ch_prbslocked_12_s),
     .up_pll_locked (up_ch_pll_locked_13),
     .up_rst_done (up_ch_rst_done_13),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_13),
     .up_prbserr (up_ch_prbserr_13),
     .up_prbslocked (up_ch_prbslocked_13),
     .up_pll_locked_out (up_ch_pll_locked_13_s),
     .up_rst_done_out (up_ch_rst_done_13_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_13_s),
     .up_prbserr_out (up_ch_prbserr_13_s),
     .up_prbslocked_out (up_ch_prbslocked_13_s));
 
@@ -1948,6 +2053,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_14_s));
 
   assign up_ch_rst_14 = up_ch_rst;
+  assign up_ch_progdiv_rst_14 = up_ch_progdiv_rst;
   assign up_ch_user_ready_14 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_14 = up_ch_lpm_dfe_n;
   assign up_ch_rate_14 = up_ch_rate;
@@ -1968,14 +2074,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_13_s),
     .up_rst_done_in (up_ch_rst_done_13_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_13_s),
     .up_prbserr_in (up_ch_prbserr_13_s),
     .up_prbslocked_in (up_ch_prbslocked_13_s),
     .up_pll_locked (up_ch_pll_locked_14),
     .up_rst_done (up_ch_rst_done_14),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_14),
     .up_prbserr (up_ch_prbserr_14),
     .up_prbslocked (up_ch_prbslocked_14),
     .up_pll_locked_out (up_ch_pll_locked_14_s),
     .up_rst_done_out (up_ch_rst_done_14_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_14_s),
     .up_prbserr_out (up_ch_prbserr_14_s),
     .up_prbslocked_out (up_ch_prbslocked_14_s));
 
@@ -2020,6 +2129,7 @@ module axi_adxcvr #(
     .up_ready_out (up_es_ready_15_s));
 
   assign up_ch_rst_15 = up_ch_rst;
+  assign up_ch_progdiv_rst_15 = up_ch_progdiv_rst;
   assign up_ch_user_ready_15 = up_ch_user_ready;
   assign up_ch_lpm_dfe_n_15 = up_ch_lpm_dfe_n;
   assign up_ch_rate_15 = up_ch_rate;
@@ -2040,14 +2150,17 @@ module axi_adxcvr #(
     .up_clk (up_clk),
     .up_pll_locked_in (up_ch_pll_locked_14_s),
     .up_rst_done_in (up_ch_rst_done_14_s),
+    .up_progdiv_rst_done_in (up_ch_progdiv_rst_done_14_s),
     .up_prbserr_in (up_ch_prbserr_14_s),
     .up_prbslocked_in (up_ch_prbslocked_14_s),
     .up_pll_locked (up_ch_pll_locked_15),
     .up_rst_done (up_ch_rst_done_15),
+    .up_progdiv_rst_done (up_ch_progdiv_rst_done_15),
     .up_prbserr (up_ch_prbserr_15),
     .up_prbslocked (up_ch_prbslocked_15),
     .up_pll_locked_out (up_ch_pll_locked_15_s),
     .up_rst_done_out (up_ch_rst_done_15_s),
+    .up_progdiv_rst_done_out (up_ch_progdiv_rst_done_15_s),
     .up_prbserr_out (up_ch_prbserr_15_s),
     .up_prbslocked_out (up_ch_prbslocked_15_s));
 
@@ -2145,8 +2258,10 @@ module axi_adxcvr #(
     .up_cm_ready (up_cm_ready_12_s),
     .up_ch_pll_locked (up_ch_pll_locked_15_s),
     .up_ch_rst (up_ch_rst),
+    .up_ch_progdiv_rst (up_ch_progdiv_rst),
     .up_ch_user_ready (up_ch_user_ready),
     .up_ch_rst_done (up_ch_rst_done_15_s),
+    .up_ch_progdiv_rst_done (up_ch_progdiv_rst_done_15_s),
     .up_ch_prbsforceerr (up_ch_prbsforceerr),
     .up_ch_prbssel (up_ch_prbssel),
     .up_ch_prbscntreset (up_ch_prbscntreset),

@@ -170,8 +170,10 @@ module util_adxcvr #(
   input           up_es_reset_0,
   output          up_rx_pll_locked_0,
   input           up_rx_rst_0,
+  input           up_rx_progdiv_rst_0,
   input           up_rx_user_ready_0,
   output          up_rx_rst_done_0,
+  output          up_rx_progdiv_rst_done_0,
   input   [ 3:0]  up_rx_prbssel_0,
   input           up_rx_prbscntreset_0,
   output          up_rx_prbserr_0,
@@ -188,8 +190,10 @@ module util_adxcvr #(
   output          up_rx_ready_0,
   output          up_tx_pll_locked_0,
   input           up_tx_rst_0,
+  input           up_tx_progdiv_rst_0,
   input           up_tx_user_ready_0,
   output          up_tx_rst_done_0,
+  output          up_tx_progdiv_rst_done_0,
   input           up_tx_prbsforceerr_0,
   input   [ 3:0]  up_tx_prbssel_0,
   input           up_tx_lpm_dfe_n_0,
@@ -242,8 +246,10 @@ module util_adxcvr #(
   input           up_es_reset_1,
   output          up_rx_pll_locked_1,
   input           up_rx_rst_1,
+  input           up_rx_progdiv_rst_1,
   input           up_rx_user_ready_1,
   output          up_rx_rst_done_1,
+  output          up_rx_progdiv_rst_done_1,
   input   [ 3:0]  up_rx_prbssel_1,
   input           up_rx_prbscntreset_1,
   output          up_rx_prbserr_1,
@@ -260,8 +266,10 @@ module util_adxcvr #(
   output          up_rx_ready_1,
   output          up_tx_pll_locked_1,
   input           up_tx_rst_1,
+  input           up_tx_progdiv_rst_1,
   input           up_tx_user_ready_1,
   output          up_tx_rst_done_1,
+  output          up_tx_progdiv_rst_done_1,
   input           up_tx_prbsforceerr_1,
   input   [ 3:0]  up_tx_prbssel_1,
   input           up_tx_lpm_dfe_n_1,
@@ -314,8 +322,10 @@ module util_adxcvr #(
   input           up_es_reset_2,
   output          up_rx_pll_locked_2,
   input           up_rx_rst_2,
+  input           up_rx_progdiv_rst_2,
   input           up_rx_user_ready_2,
   output          up_rx_rst_done_2,
+  output          up_rx_progdiv_rst_done_2,
   input   [ 3:0]  up_rx_prbssel_2,
   input           up_rx_prbscntreset_2,
   output          up_rx_prbserr_2,
@@ -332,8 +342,10 @@ module util_adxcvr #(
   output          up_rx_ready_2,
   output          up_tx_pll_locked_2,
   input           up_tx_rst_2,
+  input           up_tx_progdiv_rst_2,
   input           up_tx_user_ready_2,
   output          up_tx_rst_done_2,
+  output          up_tx_progdiv_rst_done_2,
   input           up_tx_prbsforceerr_2,
   input   [ 3:0]  up_tx_prbssel_2,
   input           up_tx_lpm_dfe_n_2,
@@ -386,8 +398,10 @@ module util_adxcvr #(
   input           up_es_reset_3,
   output          up_rx_pll_locked_3,
   input           up_rx_rst_3,
+  input           up_rx_progdiv_rst_3,
   input           up_rx_user_ready_3,
   output          up_rx_rst_done_3,
+  output          up_rx_progdiv_rst_done_3,
   input   [ 3:0]  up_rx_prbssel_3,
   input           up_rx_prbscntreset_3,
   output          up_rx_prbserr_3,
@@ -404,8 +418,10 @@ module util_adxcvr #(
   output          up_rx_ready_3,
   output          up_tx_pll_locked_3,
   input           up_tx_rst_3,
+  input           up_tx_progdiv_rst_3,
   input           up_tx_user_ready_3,
   output          up_tx_rst_done_3,
+  output          up_tx_progdiv_rst_done_3,
   input           up_tx_prbsforceerr_3,
   input   [ 3:0]  up_tx_prbssel_3,
   input           up_tx_lpm_dfe_n_3,
@@ -466,8 +482,10 @@ module util_adxcvr #(
   input           up_es_reset_4,
   output          up_rx_pll_locked_4,
   input           up_rx_rst_4,
+  input           up_rx_progdiv_rst_4,
   input           up_rx_user_ready_4,
   output          up_rx_rst_done_4,
+  output          up_rx_progdiv_rst_done_4,
   input   [ 3:0]  up_rx_prbssel_4,
   input           up_rx_prbscntreset_4,
   output          up_rx_prbserr_4,
@@ -484,8 +502,10 @@ module util_adxcvr #(
   output          up_rx_ready_4,
   output          up_tx_pll_locked_4,
   input           up_tx_rst_4,
+  input           up_tx_progdiv_rst_4,
   input           up_tx_user_ready_4,
   output          up_tx_rst_done_4,
+  output          up_tx_progdiv_rst_done_4,
   input           up_tx_prbsforceerr_4,
   input   [ 3:0]  up_tx_prbssel_4,
   input           up_tx_lpm_dfe_n_4,
@@ -538,8 +558,10 @@ module util_adxcvr #(
   input           up_es_reset_5,
   output          up_rx_pll_locked_5,
   input           up_rx_rst_5,
+  input           up_rx_progdiv_rst_5,
   input           up_rx_user_ready_5,
   output          up_rx_rst_done_5,
+  output          up_rx_progdiv_rst_done_5,
   input   [ 3:0]  up_rx_prbssel_5,
   input           up_rx_prbscntreset_5,
   output          up_rx_prbserr_5,
@@ -556,8 +578,10 @@ module util_adxcvr #(
   output          up_rx_ready_5,
   output          up_tx_pll_locked_5,
   input           up_tx_rst_5,
+  input           up_tx_progdiv_rst_5,
   input           up_tx_user_ready_5,
   output          up_tx_rst_done_5,
+  output          up_tx_progdiv_rst_done_5,
   input           up_tx_prbsforceerr_5,
   input   [ 3:0]  up_tx_prbssel_5,
   input           up_tx_lpm_dfe_n_5,
@@ -610,8 +634,10 @@ module util_adxcvr #(
   input           up_es_reset_6,
   output          up_rx_pll_locked_6,
   input           up_rx_rst_6,
+  input           up_rx_progdiv_rst_6,
   input           up_rx_user_ready_6,
   output          up_rx_rst_done_6,
+  output          up_rx_progdiv_rst_done_6,
   input   [ 3:0]  up_rx_prbssel_6,
   input           up_rx_prbscntreset_6,
   output          up_rx_prbserr_6,
@@ -628,8 +654,10 @@ module util_adxcvr #(
   output          up_rx_ready_6,
   output          up_tx_pll_locked_6,
   input           up_tx_rst_6,
+  input           up_tx_progdiv_rst_6,
   input           up_tx_user_ready_6,
   output          up_tx_rst_done_6,
+  output          up_tx_progdiv_rst_done_6,
   input           up_tx_prbsforceerr_6,
   input   [ 3:0]  up_tx_prbssel_6,
   input           up_tx_lpm_dfe_n_6,
@@ -682,8 +710,10 @@ module util_adxcvr #(
   input           up_es_reset_7,
   output          up_rx_pll_locked_7,
   input           up_rx_rst_7,
+  input           up_rx_progdiv_rst_7,
   input           up_rx_user_ready_7,
   output          up_rx_rst_done_7,
+  output          up_rx_progdiv_rst_done_7,
   input   [ 3:0]  up_rx_prbssel_7,
   input           up_rx_prbscntreset_7,
   output          up_rx_prbserr_7,
@@ -700,8 +730,10 @@ module util_adxcvr #(
   output          up_rx_ready_7,
   output          up_tx_pll_locked_7,
   input           up_tx_rst_7,
+  input           up_tx_progdiv_rst_7,
   input           up_tx_user_ready_7,
   output          up_tx_rst_done_7,
+  output          up_tx_progdiv_rst_done_7,
   input           up_tx_prbsforceerr_7,
   input   [ 3:0]  up_tx_prbssel_7,
   input           up_tx_lpm_dfe_n_7,
@@ -762,8 +794,10 @@ module util_adxcvr #(
   input           up_es_reset_8,
   output          up_rx_pll_locked_8,
   input           up_rx_rst_8,
+  input           up_rx_progdiv_rst_8,
   input           up_rx_user_ready_8,
   output          up_rx_rst_done_8,
+  output          up_rx_progdiv_rst_done_8,
   input   [ 3:0]  up_rx_prbssel_8,
   input           up_rx_prbscntreset_8,
   output          up_rx_prbserr_8,
@@ -780,8 +814,10 @@ module util_adxcvr #(
   output          up_rx_ready_8,
   output          up_tx_pll_locked_8,
   input           up_tx_rst_8,
+  input           up_tx_progdiv_rst_8,
   input           up_tx_user_ready_8,
   output          up_tx_rst_done_8,
+  output          up_tx_progdiv_rst_done_8,
   input           up_tx_prbsforceerr_8,
   input   [ 3:0]  up_tx_prbssel_8,
   input           up_tx_lpm_dfe_n_8,
@@ -834,8 +870,10 @@ module util_adxcvr #(
   input           up_es_reset_9,
   output          up_rx_pll_locked_9,
   input           up_rx_rst_9,
+  input           up_rx_progdiv_rst_9,
   input           up_rx_user_ready_9,
   output          up_rx_rst_done_9,
+  output          up_rx_progdiv_rst_done_9,
   input   [ 3:0]  up_rx_prbssel_9,
   input           up_rx_prbscntreset_9,
   output          up_rx_prbserr_9,
@@ -852,8 +890,10 @@ module util_adxcvr #(
   output          up_rx_ready_9,
   output          up_tx_pll_locked_9,
   input           up_tx_rst_9,
+  input           up_tx_progdiv_rst_9,
   input           up_tx_user_ready_9,
   output          up_tx_rst_done_9,
+  output          up_tx_progdiv_rst_done_9,
   input           up_tx_prbsforceerr_9,
   input   [ 3:0]  up_tx_prbssel_9,
   input           up_tx_lpm_dfe_n_9,
@@ -906,8 +946,10 @@ module util_adxcvr #(
   input           up_es_reset_10,
   output          up_rx_pll_locked_10,
   input           up_rx_rst_10,
+  input           up_rx_progdiv_rst_10,
   input           up_rx_user_ready_10,
   output          up_rx_rst_done_10,
+  output          up_rx_progdiv_rst_done_10,
   input   [ 3:0]  up_rx_prbssel_10,
   input           up_rx_prbscntreset_10,
   output          up_rx_prbserr_10,
@@ -924,8 +966,10 @@ module util_adxcvr #(
   output          up_rx_ready_10,
   output          up_tx_pll_locked_10,
   input           up_tx_rst_10,
+  input           up_tx_progdiv_rst_10,
   input           up_tx_user_ready_10,
   output          up_tx_rst_done_10,
+  output          up_tx_progdiv_rst_done_10,
   input           up_tx_prbsforceerr_10,
   input   [ 3:0]  up_tx_prbssel_10,
   input           up_tx_lpm_dfe_n_10,
@@ -978,8 +1022,10 @@ module util_adxcvr #(
   input           up_es_reset_11,
   output          up_rx_pll_locked_11,
   input           up_rx_rst_11,
+  input           up_rx_progdiv_rst_11,
   input           up_rx_user_ready_11,
   output          up_rx_rst_done_11,
+  output          up_rx_progdiv_rst_done_11,
   input   [ 3:0]  up_rx_prbssel_11,
   input           up_rx_prbscntreset_11,
   output          up_rx_prbserr_11,
@@ -996,8 +1042,10 @@ module util_adxcvr #(
   output          up_rx_ready_11,
   output          up_tx_pll_locked_11,
   input           up_tx_rst_11,
+  input           up_tx_progdiv_rst_11,
   input           up_tx_user_ready_11,
   output          up_tx_rst_done_11,
+  output          up_tx_progdiv_rst_done_11,
   input           up_tx_prbsforceerr_11,
   input   [ 3:0]  up_tx_prbssel_11,
   input           up_tx_lpm_dfe_n_11,
@@ -1058,8 +1106,10 @@ module util_adxcvr #(
   input           up_es_reset_12,
   output          up_rx_pll_locked_12,
   input           up_rx_rst_12,
+  input           up_rx_progdiv_rst_12,
   input           up_rx_user_ready_12,
   output          up_rx_rst_done_12,
+  output          up_rx_progdiv_rst_done_12,
   input   [ 3:0]  up_rx_prbssel_12,
   input           up_rx_prbscntreset_12,
   output          up_rx_prbserr_12,
@@ -1076,8 +1126,10 @@ module util_adxcvr #(
   output          up_rx_ready_12,
   output          up_tx_pll_locked_12,
   input           up_tx_rst_12,
+  input           up_tx_progdiv_rst_12,
   input           up_tx_user_ready_12,
   output          up_tx_rst_done_12,
+  output          up_tx_progdiv_rst_done_12,
   input           up_tx_prbsforceerr_12,
   input   [ 3:0]  up_tx_prbssel_12,
   input           up_tx_lpm_dfe_n_12,
@@ -1130,8 +1182,10 @@ module util_adxcvr #(
   input           up_es_reset_13,
   output          up_rx_pll_locked_13,
   input           up_rx_rst_13,
+  input           up_rx_progdiv_rst_13,
   input           up_rx_user_ready_13,
   output          up_rx_rst_done_13,
+  output          up_rx_progdiv_rst_done_13,
   input   [ 3:0]  up_rx_prbssel_13,
   input           up_rx_prbscntreset_13,
   output          up_rx_prbserr_13,
@@ -1148,8 +1202,10 @@ module util_adxcvr #(
   output          up_rx_ready_13,
   output          up_tx_pll_locked_13,
   input           up_tx_rst_13,
+  input           up_tx_progdiv_rst_13,
   input           up_tx_user_ready_13,
   output          up_tx_rst_done_13,
+  output          up_tx_progdiv_rst_done_13,
   input           up_tx_prbsforceerr_13,
   input   [ 3:0]  up_tx_prbssel_13,
   input           up_tx_lpm_dfe_n_13,
@@ -1202,8 +1258,10 @@ module util_adxcvr #(
   input           up_es_reset_14,
   output          up_rx_pll_locked_14,
   input           up_rx_rst_14,
+  input           up_rx_progdiv_rst_14,
   input           up_rx_user_ready_14,
   output          up_rx_rst_done_14,
+  output          up_rx_progdiv_rst_done_14,
   input   [ 3:0]  up_rx_prbssel_14,
   input           up_rx_prbscntreset_14,
   output          up_rx_prbserr_14,
@@ -1220,8 +1278,10 @@ module util_adxcvr #(
   output          up_rx_ready_14,
   output          up_tx_pll_locked_14,
   input           up_tx_rst_14,
+  input           up_tx_progdiv_rst_14,
   input           up_tx_user_ready_14,
   output          up_tx_rst_done_14,
+  output          up_tx_progdiv_rst_done_14,
   input           up_tx_prbsforceerr_14,
   input   [ 3:0]  up_tx_prbssel_14,
   input           up_tx_lpm_dfe_n_14,
@@ -1274,8 +1334,10 @@ module util_adxcvr #(
   input           up_es_reset_15,
   output          up_rx_pll_locked_15,
   input           up_rx_rst_15,
+  input           up_rx_progdiv_rst_15,
   input           up_rx_user_ready_15,
   output          up_rx_rst_done_15,
+  output          up_rx_progdiv_rst_done_15,
   input   [ 3:0]  up_rx_prbssel_15,
   input           up_rx_prbscntreset_15,
   output          up_rx_prbserr_15,
@@ -1292,8 +1354,10 @@ module util_adxcvr #(
   output          up_rx_ready_15,
   output          up_tx_pll_locked_15,
   input           up_tx_rst_15,
+  input           up_tx_progdiv_rst_15,
   input           up_tx_user_ready_15,
   output          up_tx_rst_done_15,
+  output          up_tx_progdiv_rst_done_15,
   input           up_tx_prbsforceerr_15,
   input   [ 3:0]  up_tx_prbssel_15,
   input           up_tx_lpm_dfe_n_15,
@@ -1507,8 +1571,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_0),
     .up_rx_pll_locked (up_rx_pll_locked_0),
     .up_rx_rst (up_rx_rst_0),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_0),
     .up_rx_user_ready (up_rx_user_ready_0),
     .up_rx_rst_done (up_rx_rst_done_0),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_0),
     .up_rx_prbssel (up_rx_prbssel_0),
     .up_rx_prbscntreset (up_rx_prbscntreset_0),
     .up_rx_prbserr (up_rx_prbserr_0),
@@ -1525,8 +1591,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_0),
     .up_tx_pll_locked (up_tx_pll_locked_0),
     .up_tx_rst (up_tx_rst_0),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_0),
     .up_tx_user_ready (up_tx_user_ready_0),
     .up_tx_rst_done (up_tx_rst_done_0),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_0),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_0),
     .up_tx_prbssel (up_tx_prbssel_0),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_0),
@@ -1555,10 +1623,12 @@ module util_adxcvr #(
   assign up_es_ready_0 = 1'd0;
   assign up_rx_pll_locked_0 = 1'd0;
   assign up_rx_rst_done_0 = 1'd0;
+  assign up_rx_progdiv_rst_done_0 = 1'd0;
   assign up_rx_rdata_0 = 16'd0;
   assign up_rx_ready_0 = 1'd0;
   assign up_tx_pll_locked_0 = 1'd0;
   assign up_tx_rst_done_0 = 1'd0;
+  assign up_tx_progdiv_rst_done_0 = 1'd0;
   assign up_tx_rdata_0 = 16'd0;
   assign up_tx_ready_0 = 1'd0;
   end
@@ -1656,8 +1726,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_1),
     .up_rx_pll_locked (up_rx_pll_locked_1),
     .up_rx_rst (up_rx_rst_1),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_1),
     .up_rx_user_ready (up_rx_user_ready_1),
     .up_rx_rst_done (up_rx_rst_done_1),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_1),
     .up_rx_prbssel (up_rx_prbssel_1),
     .up_rx_prbscntreset (up_rx_prbscntreset_1),
     .up_rx_prbserr (up_rx_prbserr_1),
@@ -1674,8 +1746,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_1),
     .up_tx_pll_locked (up_tx_pll_locked_1),
     .up_tx_rst (up_tx_rst_1),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_1),
     .up_tx_user_ready (up_tx_user_ready_1),
     .up_tx_rst_done (up_tx_rst_done_1),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_1),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_1),
     .up_tx_prbssel (up_tx_prbssel_1),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_1),
@@ -1704,10 +1778,12 @@ module util_adxcvr #(
   assign up_es_ready_1 = 1'd0;
   assign up_rx_pll_locked_1 = 1'd0;
   assign up_rx_rst_done_1 = 1'd0;
+  assign up_rx_progdiv_rst_done_1 = 1'd0;
   assign up_rx_rdata_1 = 16'd0;
   assign up_rx_ready_1 = 1'd0;
   assign up_tx_pll_locked_1 = 1'd0;
   assign up_tx_rst_done_1 = 1'd0;
+  assign up_tx_progdiv_rst_done_1 = 1'd0;
   assign up_tx_rdata_1 = 16'd0;
   assign up_tx_ready_1 = 1'd0;
   end
@@ -1805,8 +1881,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_2),
     .up_rx_pll_locked (up_rx_pll_locked_2),
     .up_rx_rst (up_rx_rst_2),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_2),
     .up_rx_user_ready (up_rx_user_ready_2),
     .up_rx_rst_done (up_rx_rst_done_2),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_2),
     .up_rx_prbssel (up_rx_prbssel_2),
     .up_rx_prbscntreset (up_rx_prbscntreset_2),
     .up_rx_prbserr (up_rx_prbserr_2),
@@ -1823,8 +1901,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_2),
     .up_tx_pll_locked (up_tx_pll_locked_2),
     .up_tx_rst (up_tx_rst_2),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_2),
     .up_tx_user_ready (up_tx_user_ready_2),
     .up_tx_rst_done (up_tx_rst_done_2),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_2),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_2),
     .up_tx_prbssel (up_tx_prbssel_2),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_2),
@@ -1853,10 +1933,12 @@ module util_adxcvr #(
   assign up_es_ready_2 = 1'd0;
   assign up_rx_pll_locked_2 = 1'd0;
   assign up_rx_rst_done_2 = 1'd0;
+  assign up_rx_progdiv_rst_done_2 = 1'd0;
   assign up_rx_rdata_2 = 16'd0;
   assign up_rx_ready_2 = 1'd0;
   assign up_tx_pll_locked_2 = 1'd0;
   assign up_tx_rst_done_2 = 1'd0;
+  assign up_tx_progdiv_rst_done_2 = 1'd0;
   assign up_tx_rdata_2 = 16'd0;
   assign up_tx_ready_2 = 1'd0;
   end
@@ -1954,8 +2036,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_3),
     .up_rx_pll_locked (up_rx_pll_locked_3),
     .up_rx_rst (up_rx_rst_3),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_3),
     .up_rx_user_ready (up_rx_user_ready_3),
     .up_rx_rst_done (up_rx_rst_done_3),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_3),
     .up_rx_prbssel (up_rx_prbssel_3),
     .up_rx_prbscntreset (up_rx_prbscntreset_3),
     .up_rx_prbserr (up_rx_prbserr_3),
@@ -1972,8 +2056,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_3),
     .up_tx_pll_locked (up_tx_pll_locked_3),
     .up_tx_rst (up_tx_rst_3),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_3),
     .up_tx_user_ready (up_tx_user_ready_3),
     .up_tx_rst_done (up_tx_rst_done_3),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_3),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_3),
     .up_tx_prbssel (up_tx_prbssel_3),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_3),
@@ -2002,10 +2088,12 @@ module util_adxcvr #(
   assign up_es_ready_3 = 1'd0;
   assign up_rx_pll_locked_3 = 1'd0;
   assign up_rx_rst_done_3 = 1'd0;
+  assign up_rx_progdiv_rst_done_3 = 1'd0;
   assign up_rx_rdata_3 = 16'd0;
   assign up_rx_ready_3 = 1'd0;
   assign up_tx_pll_locked_3 = 1'd0;
   assign up_tx_rst_done_3 = 1'd0;
+  assign up_tx_progdiv_rst_done_3 = 1'd0;
   assign up_tx_rdata_3 = 16'd0;
   assign up_tx_ready_3 = 1'd0;
   end
@@ -2153,8 +2241,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_4),
     .up_rx_pll_locked (up_rx_pll_locked_4),
     .up_rx_rst (up_rx_rst_4),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_4),
     .up_rx_user_ready (up_rx_user_ready_4),
     .up_rx_rst_done (up_rx_rst_done_4),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_4),
     .up_rx_prbssel (up_rx_prbssel_4),
     .up_rx_prbscntreset (up_rx_prbscntreset_4),
     .up_rx_prbserr (up_rx_prbserr_4),
@@ -2171,8 +2261,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_4),
     .up_tx_pll_locked (up_tx_pll_locked_4),
     .up_tx_rst (up_tx_rst_4),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_4),
     .up_tx_user_ready (up_tx_user_ready_4),
     .up_tx_rst_done (up_tx_rst_done_4),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_4),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_4),
     .up_tx_prbssel (up_tx_prbssel_4),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_4),
@@ -2201,10 +2293,12 @@ module util_adxcvr #(
   assign up_es_ready_4 = 1'd0;
   assign up_rx_pll_locked_4 = 1'd0;
   assign up_rx_rst_done_4 = 1'd0;
+  assign up_rx_progdiv_rst_done_4 = 1'd0;
   assign up_rx_rdata_4 = 16'd0;
   assign up_rx_ready_4 = 1'd0;
   assign up_tx_pll_locked_4 = 1'd0;
   assign up_tx_rst_done_4 = 1'd0;
+  assign up_tx_progdiv_rst_done_4 = 1'd0;
   assign up_tx_rdata_4 = 16'd0;
   assign up_tx_ready_4 = 1'd0;
   end
@@ -2302,8 +2396,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_5),
     .up_rx_pll_locked (up_rx_pll_locked_5),
     .up_rx_rst (up_rx_rst_5),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_5),
     .up_rx_user_ready (up_rx_user_ready_5),
     .up_rx_rst_done (up_rx_rst_done_5),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_5),
     .up_rx_prbssel (up_rx_prbssel_5),
     .up_rx_prbscntreset (up_rx_prbscntreset_5),
     .up_rx_prbserr (up_rx_prbserr_5),
@@ -2320,8 +2416,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_5),
     .up_tx_pll_locked (up_tx_pll_locked_5),
     .up_tx_rst (up_tx_rst_5),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_5),
     .up_tx_user_ready (up_tx_user_ready_5),
     .up_tx_rst_done (up_tx_rst_done_5),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_5),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_5),
     .up_tx_prbssel (up_tx_prbssel_5),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_5),
@@ -2350,10 +2448,12 @@ module util_adxcvr #(
   assign up_es_ready_5 = 1'd0;
   assign up_rx_pll_locked_5 = 1'd0;
   assign up_rx_rst_done_5 = 1'd0;
+  assign up_rx_progdiv_rst_done_5 = 1'd0;
   assign up_rx_rdata_5 = 16'd0;
   assign up_rx_ready_5 = 1'd0;
   assign up_tx_pll_locked_5 = 1'd0;
   assign up_tx_rst_done_5 = 1'd0;
+  assign up_tx_progdiv_rst_done_5 = 1'd0;
   assign up_tx_rdata_5 = 16'd0;
   assign up_tx_ready_5 = 1'd0;
   end
@@ -2451,8 +2551,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_6),
     .up_rx_pll_locked (up_rx_pll_locked_6),
     .up_rx_rst (up_rx_rst_6),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_6),
     .up_rx_user_ready (up_rx_user_ready_6),
     .up_rx_rst_done (up_rx_rst_done_6),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_6),
     .up_rx_prbssel (up_rx_prbssel_6),
     .up_rx_prbscntreset (up_rx_prbscntreset_6),
     .up_rx_prbserr (up_rx_prbserr_6),
@@ -2469,8 +2571,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_6),
     .up_tx_pll_locked (up_tx_pll_locked_6),
     .up_tx_rst (up_tx_rst_6),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_6),
     .up_tx_user_ready (up_tx_user_ready_6),
     .up_tx_rst_done (up_tx_rst_done_6),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_6),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_6),
     .up_tx_prbssel (up_tx_prbssel_6),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_6),
@@ -2499,10 +2603,12 @@ module util_adxcvr #(
   assign up_es_ready_6 = 1'd0;
   assign up_rx_pll_locked_6 = 1'd0;
   assign up_rx_rst_done_6 = 1'd0;
+  assign up_rx_progdiv_rst_done_6 = 1'd0;
   assign up_rx_rdata_6 = 16'd0;
   assign up_rx_ready_6 = 1'd0;
   assign up_tx_pll_locked_6 = 1'd0;
   assign up_tx_rst_done_6 = 1'd0;
+  assign up_tx_progdiv_rst_done_6 = 1'd0;
   assign up_tx_rdata_6 = 16'd0;
   assign up_tx_ready_6 = 1'd0;
   end
@@ -2600,8 +2706,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_7),
     .up_rx_pll_locked (up_rx_pll_locked_7),
     .up_rx_rst (up_rx_rst_7),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_7),
     .up_rx_user_ready (up_rx_user_ready_7),
     .up_rx_rst_done (up_rx_rst_done_7),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_7),
     .up_rx_prbssel (up_rx_prbssel_7),
     .up_rx_prbscntreset (up_rx_prbscntreset_7),
     .up_rx_prbserr (up_rx_prbserr_7),
@@ -2618,8 +2726,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_7),
     .up_tx_pll_locked (up_tx_pll_locked_7),
     .up_tx_rst (up_tx_rst_7),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_7),
     .up_tx_user_ready (up_tx_user_ready_7),
     .up_tx_rst_done (up_tx_rst_done_7),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_7),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_7),
     .up_tx_prbssel (up_tx_prbssel_7),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_7),
@@ -2648,10 +2758,12 @@ module util_adxcvr #(
   assign up_es_ready_7 = 1'd0;
   assign up_rx_pll_locked_7 = 1'd0;
   assign up_rx_rst_done_7 = 1'd0;
+  assign up_rx_progdiv_rst_done_7 = 1'd0;
   assign up_rx_rdata_7 = 16'd0;
   assign up_rx_ready_7 = 1'd0;
   assign up_tx_pll_locked_7 = 1'd0;
   assign up_tx_rst_done_7 = 1'd0;
+  assign up_tx_progdiv_rst_done_7 = 1'd0;
   assign up_tx_rdata_7 = 16'd0;
   assign up_tx_ready_7 = 1'd0;
   end
@@ -2799,8 +2911,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_8),
     .up_rx_pll_locked (up_rx_pll_locked_8),
     .up_rx_rst (up_rx_rst_8),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_8),
     .up_rx_user_ready (up_rx_user_ready_8),
     .up_rx_rst_done (up_rx_rst_done_8),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_8),
     .up_rx_prbssel (up_rx_prbssel_8),
     .up_rx_prbscntreset (up_rx_prbscntreset_8),
     .up_rx_prbserr (up_rx_prbserr_8),
@@ -2817,8 +2931,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_8),
     .up_tx_pll_locked (up_tx_pll_locked_8),
     .up_tx_rst (up_tx_rst_8),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_8),
     .up_tx_user_ready (up_tx_user_ready_8),
     .up_tx_rst_done (up_tx_rst_done_8),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_8),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_8),
     .up_tx_prbssel (up_tx_prbssel_8),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_8),
@@ -2847,10 +2963,12 @@ module util_adxcvr #(
   assign up_es_ready_8 = 1'd0;
   assign up_rx_pll_locked_8 = 1'd0;
   assign up_rx_rst_done_8 = 1'd0;
+  assign up_rx_progdiv_rst_done_8 = 1'd0;
   assign up_rx_rdata_8 = 16'd0;
   assign up_rx_ready_8 = 1'd0;
   assign up_tx_pll_locked_8 = 1'd0;
   assign up_tx_rst_done_8 = 1'd0;
+  assign up_tx_progdiv_rst_done_8 = 1'd0;
   assign up_tx_rdata_8 = 16'd0;
   assign up_tx_ready_8 = 1'd0;
   end
@@ -2948,8 +3066,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_9),
     .up_rx_pll_locked (up_rx_pll_locked_9),
     .up_rx_rst (up_rx_rst_9),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_9),
     .up_rx_user_ready (up_rx_user_ready_9),
     .up_rx_rst_done (up_rx_rst_done_9),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_9),
     .up_rx_prbssel (up_rx_prbssel_9),
     .up_rx_prbscntreset (up_rx_prbscntreset_9),
     .up_rx_prbserr (up_rx_prbserr_9),
@@ -2966,8 +3086,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_9),
     .up_tx_pll_locked (up_tx_pll_locked_9),
     .up_tx_rst (up_tx_rst_9),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_9),
     .up_tx_user_ready (up_tx_user_ready_9),
     .up_tx_rst_done (up_tx_rst_done_9),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_9),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_9),
     .up_tx_prbssel (up_tx_prbssel_9),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_9),
@@ -2996,10 +3118,12 @@ module util_adxcvr #(
   assign up_es_ready_9 = 1'd0;
   assign up_rx_pll_locked_9 = 1'd0;
   assign up_rx_rst_done_9 = 1'd0;
+  assign up_rx_progdiv_rst_done_9 = 1'd0;
   assign up_rx_rdata_9 = 16'd0;
   assign up_rx_ready_9 = 1'd0;
   assign up_tx_pll_locked_9 = 1'd0;
   assign up_tx_rst_done_9 = 1'd0;
+  assign up_tx_progdiv_rst_done_9 = 1'd0;
   assign up_tx_rdata_9 = 16'd0;
   assign up_tx_ready_9 = 1'd0;
   end
@@ -3097,8 +3221,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_10),
     .up_rx_pll_locked (up_rx_pll_locked_10),
     .up_rx_rst (up_rx_rst_10),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_10),
     .up_rx_user_ready (up_rx_user_ready_10),
     .up_rx_rst_done (up_rx_rst_done_10),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_10),
     .up_rx_prbssel (up_rx_prbssel_10),
     .up_rx_prbscntreset (up_rx_prbscntreset_10),
     .up_rx_prbserr (up_rx_prbserr_10),
@@ -3115,8 +3241,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_10),
     .up_tx_pll_locked (up_tx_pll_locked_10),
     .up_tx_rst (up_tx_rst_10),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_10),
     .up_tx_user_ready (up_tx_user_ready_10),
     .up_tx_rst_done (up_tx_rst_done_10),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_10),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_10),
     .up_tx_prbssel (up_tx_prbssel_10),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_10),
@@ -3145,10 +3273,12 @@ module util_adxcvr #(
   assign up_es_ready_10 = 1'd0;
   assign up_rx_pll_locked_10 = 1'd0;
   assign up_rx_rst_done_10 = 1'd0;
+  assign up_rx_progdiv_rst_done_10 = 1'd0;
   assign up_rx_rdata_10 = 16'd0;
   assign up_rx_ready_10 = 1'd0;
   assign up_tx_pll_locked_10 = 1'd0;
   assign up_tx_rst_done_10 = 1'd0;
+  assign up_tx_progdiv_rst_done_10 = 1'd0;
   assign up_tx_rdata_10 = 16'd0;
   assign up_tx_ready_10 = 1'd0;
   end
@@ -3246,8 +3376,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_11),
     .up_rx_pll_locked (up_rx_pll_locked_11),
     .up_rx_rst (up_rx_rst_11),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_11),
     .up_rx_user_ready (up_rx_user_ready_11),
     .up_rx_rst_done (up_rx_rst_done_11),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_11),
     .up_rx_prbssel (up_rx_prbssel_11),
     .up_rx_prbscntreset (up_rx_prbscntreset_11),
     .up_rx_prbserr (up_rx_prbserr_11),
@@ -3264,8 +3396,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_11),
     .up_tx_pll_locked (up_tx_pll_locked_11),
     .up_tx_rst (up_tx_rst_11),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_11),
     .up_tx_user_ready (up_tx_user_ready_11),
     .up_tx_rst_done (up_tx_rst_done_11),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_11),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_11),
     .up_tx_prbssel (up_tx_prbssel_11),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_11),
@@ -3294,10 +3428,12 @@ module util_adxcvr #(
   assign up_es_ready_11 = 1'd0;
   assign up_rx_pll_locked_11 = 1'd0;
   assign up_rx_rst_done_11 = 1'd0;
+  assign up_rx_progdiv_rst_done_11 = 1'd0;
   assign up_rx_rdata_11 = 16'd0;
   assign up_rx_ready_11 = 1'd0;
   assign up_tx_pll_locked_11 = 1'd0;
   assign up_tx_rst_done_11 = 1'd0;
+  assign up_tx_progdiv_rst_done_11 = 1'd0;
   assign up_tx_rdata_11 = 16'd0;
   assign up_tx_ready_11 = 1'd0;
   end
@@ -3445,8 +3581,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_12),
     .up_rx_pll_locked (up_rx_pll_locked_12),
     .up_rx_rst (up_rx_rst_12),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_12),
     .up_rx_user_ready (up_rx_user_ready_12),
     .up_rx_rst_done (up_rx_rst_done_12),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_12),
     .up_rx_prbssel (up_rx_prbssel_12),
     .up_rx_prbscntreset (up_rx_prbscntreset_12),
     .up_rx_prbserr (up_rx_prbserr_12),
@@ -3463,8 +3601,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_12),
     .up_tx_pll_locked (up_tx_pll_locked_12),
     .up_tx_rst (up_tx_rst_12),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_12),
     .up_tx_user_ready (up_tx_user_ready_12),
     .up_tx_rst_done (up_tx_rst_done_12),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_12),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_12),
     .up_tx_prbssel (up_tx_prbssel_12),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_12),
@@ -3493,10 +3633,12 @@ module util_adxcvr #(
   assign up_es_ready_12 = 1'd0;
   assign up_rx_pll_locked_12 = 1'd0;
   assign up_rx_rst_done_12 = 1'd0;
+  assign up_rx_progdiv_rst_done_12 = 1'd0;
   assign up_rx_rdata_12 = 16'd0;
   assign up_rx_ready_12 = 1'd0;
   assign up_tx_pll_locked_12 = 1'd0;
   assign up_tx_rst_done_12 = 1'd0;
+  assign up_tx_progdiv_rst_done_12 = 1'd0;
   assign up_tx_rdata_12 = 16'd0;
   assign up_tx_ready_12 = 1'd0;
   end
@@ -3594,8 +3736,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_13),
     .up_rx_pll_locked (up_rx_pll_locked_13),
     .up_rx_rst (up_rx_rst_13),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_13),
     .up_rx_user_ready (up_rx_user_ready_13),
     .up_rx_rst_done (up_rx_rst_done_13),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_13),
     .up_rx_prbssel (up_rx_prbssel_13),
     .up_rx_prbscntreset (up_rx_prbscntreset_13),
     .up_rx_prbserr (up_rx_prbserr_13),
@@ -3612,8 +3756,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_13),
     .up_tx_pll_locked (up_tx_pll_locked_13),
     .up_tx_rst (up_tx_rst_13),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_13),
     .up_tx_user_ready (up_tx_user_ready_13),
     .up_tx_rst_done (up_tx_rst_done_13),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_13),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_13),
     .up_tx_prbssel (up_tx_prbssel_13),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_13),
@@ -3642,10 +3788,12 @@ module util_adxcvr #(
   assign up_es_ready_13 = 1'd0;
   assign up_rx_pll_locked_13 = 1'd0;
   assign up_rx_rst_done_13 = 1'd0;
+  assign up_rx_progdiv_rst_done_13 = 1'd0;
   assign up_rx_rdata_13 = 16'd0;
   assign up_rx_ready_13 = 1'd0;
   assign up_tx_pll_locked_13 = 1'd0;
   assign up_tx_rst_done_13 = 1'd0;
+  assign up_tx_progdiv_rst_done_13 = 1'd0;
   assign up_tx_rdata_13 = 16'd0;
   assign up_tx_ready_13 = 1'd0;
   end
@@ -3743,8 +3891,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_14),
     .up_rx_pll_locked (up_rx_pll_locked_14),
     .up_rx_rst (up_rx_rst_14),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_14),
     .up_rx_user_ready (up_rx_user_ready_14),
     .up_rx_rst_done (up_rx_rst_done_14),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_14),
     .up_rx_prbssel (up_rx_prbssel_14),
     .up_rx_prbscntreset (up_rx_prbscntreset_14),
     .up_rx_prbserr (up_rx_prbserr_14),
@@ -3761,8 +3911,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_14),
     .up_tx_pll_locked (up_tx_pll_locked_14),
     .up_tx_rst (up_tx_rst_14),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_14),
     .up_tx_user_ready (up_tx_user_ready_14),
     .up_tx_rst_done (up_tx_rst_done_14),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_14),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_14),
     .up_tx_prbssel (up_tx_prbssel_14),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_14),
@@ -3791,10 +3943,12 @@ module util_adxcvr #(
   assign up_es_ready_14 = 1'd0;
   assign up_rx_pll_locked_14 = 1'd0;
   assign up_rx_rst_done_14 = 1'd0;
+  assign up_rx_progdiv_rst_done_14 = 1'd0;
   assign up_rx_rdata_14 = 16'd0;
   assign up_rx_ready_14 = 1'd0;
   assign up_tx_pll_locked_14 = 1'd0;
   assign up_tx_rst_done_14 = 1'd0;
+  assign up_tx_progdiv_rst_done_14 = 1'd0;
   assign up_tx_rdata_14 = 16'd0;
   assign up_tx_ready_14 = 1'd0;
   end
@@ -3892,8 +4046,10 @@ module util_adxcvr #(
     .up_es_reset (up_es_reset_15),
     .up_rx_pll_locked (up_rx_pll_locked_15),
     .up_rx_rst (up_rx_rst_15),
+    .up_rx_progdiv_rst (up_rx_progdiv_rst_15),
     .up_rx_user_ready (up_rx_user_ready_15),
     .up_rx_rst_done (up_rx_rst_done_15),
+    .up_rx_progdiv_rst_done (up_rx_progdiv_rst_done_15),
     .up_rx_prbssel (up_rx_prbssel_15),
     .up_rx_prbscntreset (up_rx_prbscntreset_15),
     .up_rx_prbserr (up_rx_prbserr_15),
@@ -3910,8 +4066,10 @@ module util_adxcvr #(
     .up_rx_ready (up_rx_ready_15),
     .up_tx_pll_locked (up_tx_pll_locked_15),
     .up_tx_rst (up_tx_rst_15),
+    .up_tx_progdiv_rst (up_tx_progdiv_rst_15),
     .up_tx_user_ready (up_tx_user_ready_15),
     .up_tx_rst_done (up_tx_rst_done_15),
+    .up_tx_progdiv_rst_done (up_tx_progdiv_rst_done_15),
     .up_tx_prbsforceerr (up_tx_prbsforceerr_15),
     .up_tx_prbssel (up_tx_prbssel_15),
     .up_tx_lpm_dfe_n (up_tx_lpm_dfe_n_15),
@@ -3940,10 +4098,12 @@ module util_adxcvr #(
   assign up_es_ready_15 = 1'd0;
   assign up_rx_pll_locked_15 = 1'd0;
   assign up_rx_rst_done_15 = 1'd0;
+  assign up_rx_progdiv_rst_done_15 = 1'd0;
   assign up_rx_rdata_15 = 16'd0;
   assign up_rx_ready_15 = 1'd0;
   assign up_tx_pll_locked_15 = 1'd0;
   assign up_tx_rst_done_15 = 1'd0;
+  assign up_tx_progdiv_rst_done_15 = 1'd0;
   assign up_tx_rdata_15 = 16'd0;
   assign up_tx_ready_15 = 1'd0;
   end

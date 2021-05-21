@@ -228,8 +228,10 @@ for {set n 0} {$n < 16} {incr n} {
   adi_if_infer_bus analog.com:interface:if_xcvr_ch slave up_rx_${n} [list \
     "pll_locked          up_rx_pll_locked_${n}  "\
     "rst                 up_rx_rst_${n}         "\
+    "progdiv_rst         up_rx_progdiv_rst_${n}"\
     "user_ready          up_rx_user_ready_${n}  "\
     "rst_done            up_rx_rst_done_${n}    "\
+    "progdiv_rst_done    up_rx_progdiv_rst_done_${n}"\
     "prbssel             up_rx_prbssel_${n}     "\
     "prbscntreset        up_rx_prbscntreset_${n}"\
     "prbserr             up_rx_prbserr_${n}     "\
@@ -248,8 +250,10 @@ for {set n 0} {$n < 16} {incr n} {
   adi_if_infer_bus analog.com:interface:if_xcvr_ch slave up_tx_${n} [list \
     "pll_locked          up_tx_pll_locked_${n}  "\
     "rst                 up_tx_rst_${n}         "\
+    "progdiv_rst         up_tx_progdiv_rst_${n} "\
     "user_ready          up_tx_user_ready_${n}  "\
     "rst_done            up_tx_rst_done_${n}    "\
+    "progdiv_rst_done    up_tx_progdiv_rst_done_${n} "\
     "prbsforceerr        up_tx_prbsforceerr_${n}"\
     "prbssel             up_tx_prbssel_${n}     "\
     "lpm_dfe_n           up_tx_lpm_dfe_n_${n}   "\

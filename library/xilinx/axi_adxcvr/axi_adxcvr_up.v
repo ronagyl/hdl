@@ -72,8 +72,10 @@ module axi_adxcvr_up #(
 
   input               up_ch_pll_locked,
   output              up_ch_rst,
+  output              up_ch_progdiv_rst,
   output              up_ch_user_ready,
   input               up_ch_rst_done,
+  input               up_ch_progdiv_rst_done,
   output              up_ch_prbsforceerr,
   output     [ 3:0]   up_ch_prbssel,
   output              up_ch_prbscntreset,
@@ -140,6 +142,7 @@ module axi_adxcvr_up #(
   reg             up_resetn = 'd0;
   reg     [ 3:0]  up_pll_rst_cnt = 'd0;
   reg     [ 3:0]  up_rst_cnt = 'd0;
+  reg     [ 6:0]  up_progdiv_rst_cnt = 'd0;
   reg     [ 6:0]  up_user_ready_cnt = 'd0;
   reg             up_status_int = 'd0;
   reg             up_lpm_dfe_n = LPM_OR_DFE_N;
@@ -182,6 +185,7 @@ module axi_adxcvr_up #(
   // internal signals
 
   wire    [31:0]  up_rparam_s;
+  wire            up_user_ready_cnt_rst;
 
   // defaults
 
@@ -213,13 +217,19 @@ module axi_adxcvr_up #(
 
   assign up_pll_rst = up_pll_rst_cnt[3];
   assign up_ch_rst = up_rst_cnt[3];
+  assign up_ch_progdiv_rst = up_progdiv_rst_cnt[5:4]==2'b01;
   assign up_ch_user_ready = up_user_ready_cnt[6];
   assign up_status = up_status_int;
+
+  // If progdiv path is used wait until PRGDIVRESETDONE is asserted before setting user ready
+  assign up_user_ready_cnt_rst = (up_out_clk_sel != 3'b101) ? up_rst_cnt[3] :
+                                 ~up_progdiv_rst_cnt[6] | ~up_ch_progdiv_rst_done;
 
   always @(negedge up_rstn or posedge up_clk) begin
     if (up_rstn == 0) begin
       up_pll_rst_cnt <= 4'h8;
       up_rst_cnt <= 4'h8;
+      up_progdiv_rst_cnt <= 7'h00;
       up_user_ready_cnt <= 7'h00;
       up_status_int <= 1'b0;
     end else begin
@@ -234,7 +244,13 @@ module axi_adxcvr_up #(
       end else if (up_rst_cnt[3] == 1'b1) begin
         up_rst_cnt <= up_rst_cnt + 1'b1;
       end
-      if ((up_resetn == 1'b0) || (up_rst_cnt[3] == 1'b1)) begin
+      if ((up_resetn == 1'b0) || (up_rst_cnt[3] == 1'b1) ||
+        (up_out_clk_sel != 3'b101)) begin
+        up_progdiv_rst_cnt <= 7'h00;
+      end else if (up_progdiv_rst_cnt[6] == 1'b0) begin
+        up_progdiv_rst_cnt <= up_progdiv_rst_cnt + 1'b1;
+      end
+      if ((up_resetn == 1'b0) || (up_user_ready_cnt_rst == 1'b1)) begin
         up_user_ready_cnt <= 7'h00;
       end else if (up_user_ready_cnt[6] == 1'b0) begin
         up_user_ready_cnt <= up_user_ready_cnt + 1'b1;

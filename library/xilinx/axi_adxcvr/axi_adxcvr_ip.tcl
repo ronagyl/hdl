@@ -67,8 +67,10 @@ for {set n 0} {$n < 16} {incr n} {
   adi_if_infer_bus analog.com:interface:if_xcvr_ch master up_ch_${n} [list \
     "pll_locked          up_ch_pll_locked_${n}  "\
     "rst                 up_ch_rst_${n}         "\
+    "progdiv_rst         up_ch_progdiv_rst_${n}"\
     "user_ready          up_ch_user_ready_${n}  "\
     "rst_done            up_ch_rst_done_${n}    "\
+    "progdiv_rst_done    up_ch_progdiv_rst_done_${n}"\
     "prbsforceerr        up_ch_prbsforceerr_${n}"\
     "prbssel             up_ch_prbssel_${n}     "\
     "prbscntreset        up_ch_prbscntreset_${n}"\
