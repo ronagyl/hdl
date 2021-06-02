@@ -12,7 +12,7 @@ if {$NUM_OF_LANES == 4} {
 # adc peripherals
 
 ad_ip_instance axi_adxcvr axi_ad9694_xcvr [list \
-  NUM_OF_LANES $NUM_OF_XCVR_LANES \
+  NUM_OF_LANES $NUM_OF_LANES \
   QPLL_ENABLE 1 \
   TX_OR_RX_N 0 \
 ]
