@@ -35,6 +35,7 @@ module ad_ip_jesd204_tpl_adc #(
   parameter CONVERTER_RESOLUTION = 14,
   parameter BITS_PER_SAMPLE = 16,
   parameter OCTETS_PER_BEAT = 4,
+  parameter EN_FRAME_ALIGN = 1,
   parameter TWOS_COMPLEMENT = 1
 ) (
   // jesd interface
@@ -161,6 +162,7 @@ module ad_ip_jesd204_tpl_adc #(
     .BITS_PER_SAMPLE (BITS_PER_SAMPLE),
     .CONVERTER_RESOLUTION (CONVERTER_RESOLUTION),
     .SAMPLES_PER_FRAME (SAMPLES_PER_FRAME),
+    .EN_FRAME_ALIGN (EN_FRAME_ALIGN),
     .OCTETS_PER_BEAT (OCTETS_PER_BEAT),
     .LINK_DATA_WIDTH (LINK_DATA_WIDTH),
     .DMA_DATA_WIDTH (DMA_DATA_WIDTH),
