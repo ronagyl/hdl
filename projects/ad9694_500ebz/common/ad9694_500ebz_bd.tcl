@@ -24,6 +24,7 @@ adi_tpl_jesd204_rx_create ad9694_tpl_core $NUM_OF_LANES \
                                           $SAMPLES_PER_FRAME \
                                           $SAMPLE_WIDTH
 
+ad_ip_parameter ad9694_tpl_core/tpl_core CONFIG.EN_FRAME_ALIGN 0
 
 ad_ip_instance util_cpack2 util_ad9694_cpack [list \
   NUM_OF_CHANNELS $NUM_OF_CHANNELS \
