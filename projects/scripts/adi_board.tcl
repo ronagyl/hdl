@@ -192,9 +192,13 @@ proc ad_xcvrcon {u_xcvr a_xcvr a_jesd {lane_map {}} {device_clk {}}} {
   global xcvr_rx_index
   global xcvr_instance
 
-  set no_of_lanes [get_property CONFIG.NUM_OF_LANES [get_bd_cells $a_xcvr]]
   set qpll_enable [get_property CONFIG.QPLL_ENABLE [get_bd_cells $a_xcvr]]
   set tx_or_rx_n [get_property CONFIG.TX_OR_RX_N [get_bd_cells $a_xcvr]]
+  if {$tx_or_rx_n == 0} {
+    set no_of_lanes [get_property CONFIG.RX_NUM_OF_LANES [get_bd_cells $u_xcvr]]
+  } else {
+    set no_of_lanes [get_property CONFIG.TX_NUM_OF_LANES [get_bd_cells $u_xcvr]]
+  }
 
   set jesd204_bd_type [get_property TYPE [get_bd_cells $a_jesd]]
 
@@ -260,6 +264,12 @@ proc ad_xcvrcon {u_xcvr a_xcvr a_jesd {lane_map {}} {device_clk {}}} {
     ad_connect sys_cpu_resetn ${rst_gen}/ext_reset_in
   }
 
+  # Allow connecting controls only partially based on lane map
+  set num_of_act_lanes $no_of_lanes
+  if {$lane_map != {}} {
+    set num_of_act_lanes [llength $lane_map]
+  }
+
   for {set n 0} {$n < $no_of_lanes} {incr n} {
 
     set m [expr ($n + $index)]
@@ -271,27 +281,30 @@ proc ad_xcvrcon {u_xcvr a_xcvr a_jesd {lane_map {}} {device_clk {}}} {
       set phys_lane $m
     }
 
-    if {$tx_or_rx_n == 0} {
-      ad_connect  ${a_xcvr}/up_es_${n} ${u_xcvr}/up_es_${phys_lane}
-      if {$jesd204_type == 0} {
-        ad_connect  ${a_jesd}/phy_en_char_align ${u_xcvr}/${txrx}_calign_${phys_lane}
-      } else {
-        ad_connect  ${a_jesd}/rxencommaalign_out ${u_xcvr}/${txrx}_calign_${phys_lane}
-      }
-    }
+    if {$n < $num_of_act_lanes} {
 
-    if {(($n%4) == 0) && ($qpll_enable == 1)} {
-      ad_connect  ${a_xcvr}/up_cm_${n} ${u_xcvr}/up_cm_${n}
-    }
-    ad_connect  ${a_xcvr}/up_ch_${n} ${u_xcvr}/up_${txrx}_${phys_lane}
-    ad_connect  ${device_clk} ${u_xcvr}/${txrx}_clk_${phys_lane}
-    if {$phys_lane != {}} {
-      if {$jesd204_type == 0} {
-        ad_connect  ${u_xcvr}/${txrx}_${phys_lane} ${a_jesd}/${txrx}_phy${n}
-      } else {
-        ad_connect  ${u_xcvr}/${txrx}_${phys_lane} ${a_jesd}/gt${n}_${txrx}
+      if {$tx_or_rx_n == 0} {
+        ad_connect  ${a_xcvr}/up_es_${n} ${u_xcvr}/up_es_${phys_lane}
+        if {$jesd204_type == 0} {
+          ad_connect  ${a_jesd}/phy_en_char_align ${u_xcvr}/${txrx}_calign_${phys_lane}
+        } else {
+          ad_connect  ${a_jesd}/rxencommaalign_out ${u_xcvr}/${txrx}_calign_${phys_lane}
+        }
+      }
+
+      if {(($n%4) == 0) && ($qpll_enable == 1)} {
+        ad_connect  ${a_xcvr}/up_cm_${n} ${u_xcvr}/up_cm_${n}
+      }
+      ad_connect  ${a_xcvr}/up_ch_${n} ${u_xcvr}/up_${txrx}_${phys_lane}
+      if {$phys_lane != {}} {
+        if {$jesd204_type == 0} {
+          ad_connect  ${u_xcvr}/${txrx}_${phys_lane} ${a_jesd}/${txrx}_phy${n}
+        } else {
+          ad_connect  ${u_xcvr}/${txrx}_${phys_lane} ${a_jesd}/gt${n}_${txrx}
+        }
       }
     }
+    ad_connect  ${device_clk} ${u_xcvr}/${txrx}_clk_${n}
 
     create_bd_port -dir ${data_dir} ${m_data}_${m}_p
     create_bd_port -dir ${data_dir} ${m_data}_${m}_n
