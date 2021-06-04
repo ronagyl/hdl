@@ -101,15 +101,27 @@ module system_top  #(
   inout         pmod1_6_6_5V_CTRL,
   inout         pmod1_3_7_SDA,
   inout         pmod1_7_8_PWR_UP_DOWN,
-  // FMC1 XM105 breakout board
-  output        fmc_bob_xud1_cs_n,
-  inout         fmc_bob_xud1_scl,
+
+  // FMC1 custom breakout board
+  output        fmc_bob_xud1_imu_sclk,
+  output        fmc_bob_xud1_imu_mosi,
+  inout         fmc_bob_xud1_gpio0,
+  inout         fmc_bob_xud1_gpio1,
+  input         fmc_bob_xud1_imu_miso,
+  output        fmc_bob_xud1_imu_csb,
+  output        fmc_bob_xud1_imu_rst,
   output        fmc_bob_xud1_mosi,
-  inout         fmc_bob_xud1_sda,
-  input         fmc_bob_xud1_miso,
-  input         fmc_bob_xud1_pmod_dip,
+  output        fmc_bob_xud1_csb,
+  inout         fmc_bob_xud1_imu_gpio0,
+  inout         fmc_bob_xud1_imu_gpio1,
+  inout         fmc_bob_xud1_imu_gpio2,
+  inout         fmc_bob_xud1_imu_gpio3,
   output        fmc_bob_xud1_sclk,
-  input         fmc_bob_xud1_unused,
+  input         fmc_bob_xud1_miso,
+  inout         fmc_bob_xud1_gpio2,
+  inout         fmc_bob_xud1_gpio3,
+  inout         fmc_bob_xud1_gpio4,
+  inout         fmc_bob_xud1_gpio5,
 
   //debug hdr
   output       [9:0]      proto_hdr
@@ -158,11 +170,16 @@ module system_top  #(
   assign pmod0_3_7_SCLK = spi_pmod_clk;
 
   assign fmc_bob_xud1_mosi = spi_pmod_mosi;
-  assign fmc_bob_xud1_cs_n = spi_pmod_csn[6];
+  assign fmc_bob_xud1_csb = spi_pmod_csn[6];
   assign fmc_bob_xud1_sclk = spi_pmod_clk;
+
+  assign fmc_bob_xud1_imu_mosi = spi_pmod_mosi;
+  assign fmc_bob_xud1_imu_csb = spi_pmod_csn[7];
+  assign fmc_bob_xud1_imu_sclk = spi_pmod_clk;
 
   assign spi_pmod_miso = ~&spi_pmod_csn[5:1] ? pmod0_2_5_MISO :
                          ~spi_pmod_csn[6] ? fmc_bob_xud1_miso :
+                         ~spi_pmod_csn[7] ? fmc_bob_xud1_imu_miso :
                          1'b0;
 
   assign iic_rstn = 1'b1;
@@ -236,7 +253,8 @@ module system_top  #(
     .dio_t (gpio_t[43:32]),
     .dio_i (gpio_o[43:32]),
     .dio_o (gpio_i[43:32]),
-    .dio_p ({hmc_gpio1,       // 43
+    .dio_p ({
+             hmc_gpio1,       // 43
              gpio[10:0]}));   // 42-32
 
   assign gpio_i[44] = agc0[0];
@@ -270,16 +288,29 @@ module system_top  #(
   assign proto_hdr[9:6] = 4'b0;
 
   // XUD GPIOs
-  assign gpio_i[67] = fmc_bob_xud1_pmod_dip;
-  assign gpio_i[68] = gpio_o[68];
+    ad_iobuf #(.DATA_WIDTH(10)) i_xud_iobuf (
+    .dio_t (gpio_t[76:67]),
+    .dio_i (gpio_o[76:67]),
+    .dio_o (gpio_i[76:67]),
+    .dio_p ({fmc_bob_xud1_imu_gpio3,   // 76
+             fmc_bob_xud1_imu_gpio2,   // 75
+             fmc_bob_xud1_imu_gpio1,   // 74
+             fmc_bob_xud1_imu_gpio0,   // 73
+             fmc_bob_xud1_gpio5,       // 72
+             fmc_bob_xud1_gpio4,       // 71
+             fmc_bob_xud1_gpio3,       // 70
+             fmc_bob_xud1_gpio2,       // 69
+             fmc_bob_xud1_gpio1,       // 68
+             fmc_bob_xud1_gpio0}       // 67
+             ));
 
   /* Board GPIOS. Buttons, LEDs, etc... */
   assign gpio_i[20: 8] = gpio_bd_i;
   assign gpio_bd_o = gpio_o[7:0];
 
   // Unused GPIOs
+  assign gpio_i[94:77] = gpio_o[94:77];
   assign gpio_i[66:54] = gpio_o[66:54];
-  assign gpio_i[94:69] = gpio_o[94:69];
   assign gpio_i[31:21] = gpio_o[31:21];
   assign gpio_i[7:0] = gpio_o[7:0];
 
@@ -347,10 +378,7 @@ module system_top  #(
     .spi_pmod_csn_o (spi_pmod_csn),
     .spi_pmod_sdi_i (spi_pmod_miso),
     .spi_pmod_sdo_i (spi_pmod_mosi),
-    .spi_pmod_sdo_o (spi_pmod_mosi),
-    // XUD stuff
-    .iic_bob_xud1_scl_io (fmc_bob_xud1_scl),
-    .iic_bob_xud1_sda_io (fmc_bob_xud1_sda)
+    .spi_pmod_sdo_o (spi_pmod_mosi)
   );
 
   assign rx_data_p_loc[TX_JESD_L*TX_NUM_LINKS-1:0] = rx_data_p[TX_JESD_L*TX_NUM_LINKS-1:0];
