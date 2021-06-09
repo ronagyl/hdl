@@ -288,7 +288,7 @@ module system_top  #(
   assign proto_hdr[9:6] = 4'b0;
 
   // XUD GPIOs
-    ad_iobuf #(.DATA_WIDTH(10)) i_xud_iobuf (
+  ad_iobuf #(.DATA_WIDTH(10)) i_xud_iobuf (
     .dio_t (gpio_t[76:67]),
     .dio_i (gpio_o[76:67]),
     .dio_o (gpio_i[76:67]),
@@ -303,6 +303,8 @@ module system_top  #(
              fmc_bob_xud1_gpio1,       // 68
              fmc_bob_xud1_gpio0}       // 67
              ));
+
+  assign fmc_bob_xud1_imu_rst = gpio_o[77];
 
   /* Board GPIOS. Buttons, LEDs, etc... */
   assign gpio_i[20: 8] = gpio_bd_i;
