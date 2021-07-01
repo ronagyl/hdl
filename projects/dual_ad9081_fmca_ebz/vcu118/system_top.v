@@ -132,6 +132,13 @@ module system_top #(
   inout  hmc7044_sdata,
   output hmc7044_slen,
 
+  inout adf4377_sdio,
+  output adf4377_sclk,
+  output adf4377_csb,
+  output adf4377_ce,
+  output adf4377_enclk1,
+  output adf4377_enclk2,
+
   output [1:0] mxfe_reset,
   output [1:0] mxfe0_rxen,
   output [1:0] mxfe1_rxen,
@@ -140,9 +147,11 @@ module system_top #(
 
   inout  [8:0] mxfe0_gpio,
   inout  [8:0] mxfe1_gpio,
-  inout [11:0] gpio_rf,
+  output [2:0] gpio_rf_p,
+  output [2:0] gpio_rf_n,
 
-  output [45:0] gpio_vcu118
+  output [22:0] gpio_fmcp_n,
+  output [22:0] gpio_fmcp_p
 
 );
 
@@ -168,6 +177,10 @@ module system_top #(
 
   wire            tx_device_clk;
   wire            rx_device_clk;
+
+  wire            spi_clk;
+  wire            hmc7044_miso;
+  wire            adf4377_miso;
 
   assign iic_rstn = 1'b1;
 
@@ -246,11 +259,15 @@ module system_top #(
   assign hmc7044_slen = spi_csn[2];
   assign hmc7044_sclk = spi_clk;
 
+  assign adf4377_csb = spi_csn[3];
+  assign adf4377_sclk = spi_clk;
+
   assign spi_miso = ~spi_csn[0] ? mxfe0_miso :
                     ~spi_csn[1] ? mxfe1_miso :
-                    ~spi_csn[2] ? hmc7044_miso : 1'b0;
+                    ~spi_csn[2] ? hmc7044_miso :
+                    ~spi_csn[3] ? adf4377_miso : 1'b0;
 
-  ad_3w_spi #(.NUM_OF_SLAVES(1)) i_spi (
+  ad_3w_spi #(.NUM_OF_SLAVES(1)) i_spi_hmc7044 (
     .spi_csn (spi_csn[2]),
     .spi_clk (spi_clk),
     .spi_mosi (spi_mosi),
@@ -258,15 +275,34 @@ module system_top #(
     .spi_sdio (hmc7044_sdata),
     .spi_dir ());
 
+  ad_3w_spi #(.NUM_OF_SLAVES(1)) i_spi_adf4377 (
+    .spi_csn (spi_csn[3]),
+    .spi_clk (spi_clk),
+    .spi_mosi (spi_mosi),
+    .spi_miso (adf4377_miso),
+    .spi_sdio (adf4377_sdio),
+    .spi_dir ());
+
   // gpios
 
-  ad_iobuf #(.DATA_WIDTH(30)) i_iobuf (
-    .dio_t (gpio_t[61:32]),
-    .dio_i (gpio_o[61:32]),
-    .dio_o (gpio_i[61:32]),
-    .dio_p ({gpio_rf[11:0],        // 61-50
-             mxfe1_gpio[8:0],      // 49-41
+  ad_iobuf #(.DATA_WIDTH(18)) i_iobuf (
+    .dio_t (gpio_t[49:32]),
+    .dio_i (gpio_o[49:32]),
+    .dio_o (gpio_i[49:32]),
+    .dio_p ({mxfe1_gpio[8:0],      // 49-41
              mxfe0_gpio[8:0]}));   // 40-32
+
+  // RF_GPIO
+  for(i=0;i<3;i=i+1) begin : g_rf_gpio // 52-50
+    OBUFDS i_obufds_gpio (
+      .I (gpio_o[50+i]),
+      .O (gpio_rf_p[i]),
+      .OB (gpio_rf_n[i]));
+  end
+
+  assign adf4377_ce     = gpio_o[53];
+  assign adf4377_enclk1 = gpio_o[54];
+  assign adf4377_enclk2 = gpio_o[55];
 
   assign hmc7044_reset    = gpio_o[62];
   assign mxfe_reset[0]    = gpio_o[63];
@@ -283,13 +319,15 @@ module system_top #(
 
   assign gpio_i[73:62] = gpio_o[73:62];
 
-  // RF_GPIO1
-  for(i=0;i<6;i=i+1) begin : g_gpio
+  // FMCp_GPIO
+  for(i=0;i<23;i=i+1) begin : g_fmcp_gpio // 96-74
     OBUFDS i_obufds_gpio (
       .I (gpio_o[74+i]),
-      .O (gpio_vcu118[6+i]),
-      .OB (gpio_vcu118[12+i]));
+      .O (gpio_fmcp_p[i]),
+      .OB (gpio_fmcp_n[i]));
   end
+  assign gpio_i[96:74] = gpio_o[96:74];
+
 
   // VCU118 specific GPIOs
   ad_iobuf #(.DATA_WIDTH(17)) i_iobuf_bd (
